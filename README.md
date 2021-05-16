@@ -1,4 +1,5 @@
-# Virtual_showroom: The Unity project for the CIIRC Testbed Industry 4.0
+# virtual_showroom
+## The Unity project of a virtual showroom for the CIIRC Testbed Industry 4.0
 ---
 To contribute, please use chosen Unity version [2019.4.26 (LTS)](https://unity3d.com/unity/whats-new/2019.4.26).
 
