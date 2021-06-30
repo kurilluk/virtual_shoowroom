@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MyController : MonoBehaviour
+public class KukaController : MonoBehaviour
 {
     public Animator anim;
 
