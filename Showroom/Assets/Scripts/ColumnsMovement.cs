@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ColumnsMovement : MonoBehaviour
 {
+    //public GameObject PreviewModeManager;
     public GameObject sloup;
 
     private bool shouldLerp = false;
@@ -32,8 +33,8 @@ public class ColumnsMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if (shouldLerp)
+        //Call the Lerp only if the PreviewModeManager allows it. Using PreviewModeManager.CollumnsAnimation in the if statement. Not sure if this works fine...
+        if (shouldLerp && true)
         //Input.GetKey("q")
         {
             shouldLerp = true;
