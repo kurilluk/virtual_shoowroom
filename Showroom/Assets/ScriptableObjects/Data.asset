@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebccf47944492e84b90a77bb602719f9, type: 3}
   m_Name: Data
   m_EditorClassIdentifier: 
+  LightsAnimation: 0
+  CollumnsAnimation: 0

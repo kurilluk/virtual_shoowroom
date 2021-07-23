@@ -1846,6 +1846,7 @@ MonoBehaviour:
   sloup: {fileID: 0}
   timeStartedLerping: 1
   lerpTime: 5
+  speed: 1
   endPosition: {x: 0, y: -0.8, z: 0}
   startPosition: {x: 0, y: 2, z: 0}
   manager: {fileID: 11400000, guid: d2ab60adc441da049a7705650c1475c8, type: 2}
@@ -1870,9 +1871,10 @@ MonoBehaviour:
   sloup: {fileID: 0}
   timeStartedLerping: 1
   lerpTime: 5
+  speed: 1
   endPosition: {x: 0, y: 1, z: 0}
   startPosition: {x: 0, y: -1.2, z: 0}
-  manager: {fileID: 0}
+  manager: {fileID: 11400000, guid: d2ab60adc441da049a7705650c1475c8, type: 2}
 --- !u!1001 &1975947514
 PrefabInstance:
   m_ObjectHideFlags: 0

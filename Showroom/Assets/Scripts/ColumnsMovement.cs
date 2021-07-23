@@ -11,6 +11,7 @@ public class ColumnsMovement : MonoBehaviour
 
     public float timeStartedLerping;
     public float lerpTime;
+    public float speed = 1;
 
     public Vector3 endPosition;
     public Vector3 startPosition;
@@ -29,17 +30,20 @@ public class ColumnsMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartLerping();
+        if (RunMode.Develop)
+            transform.position = endPosition;
+        else
+            StartLerping();
     }
 
     // Update is called once per frame
     void Update()
     {
         //Call the Lerp only if the PreviewModeManager allows it. Using PreviewModeManager.CollumnsAnimation in the if statement. Not sure if this works fine...
-        if (shouldLerp && !RunMode.Develop) //manager.CollumnsAnimation
+        if (shouldLerp) //manager.CollumnsAnimation, !RunMode.Develop
         //Input.GetKey("q")
         {
-            Debug.Log("Manager status:" + RunMode.Develop);
+            //Debug.Log("Manager status:" + RunMode.Develop);
             shouldLerp = true;
                         
             transform.position = Lerp(startPosition, endPosition, timeStartedLerping, lerpTime);

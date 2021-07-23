@@ -30,14 +30,19 @@ public class Twilight : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myLight = GetComponent<Light>();
-        startTime = Time.time;
-
+        if (!RunMode.Develop)
+        {
+            myLight = GetComponent<Light>();
+            startTime = Time.time;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (RunMode.Develop)
+            return;
+
         if (changeRange)
         {
             if (repeatRange) {
