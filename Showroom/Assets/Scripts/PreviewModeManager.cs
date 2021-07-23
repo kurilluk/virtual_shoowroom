@@ -2,21 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PreviewModeManager : MonoBehaviour
+[CreateAssetMenu(menuName = "ScriptableObjects/PreviewModeManager")]
+public class PreviewModeManager : ScriptableObject
 {
     //These bools will allow other scripts to run their animations
-    public bool LightsAnimation;
-    public bool CollumnsAnimation;
-        
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public bool LightsAnimation = false;
+    public bool CollumnsAnimation = false;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+}
+
+public static class RunMode
+{
+    public static bool Develop = true;
 }
