@@ -49,13 +49,15 @@ public class Robot_controller : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.S))
         {
-           transq.localPosition = new Vector3(transq.localPosition.x + 0.1f, transq.localPosition.y, transq.localPosition.z);
+            var _pos = transq.localPosition;    
+            transq.localPosition = new Vector3(_pos.x + 0.1f, _pos.y, _pos.z);
         }
+
+        
         if (Input.GetKeyDown(KeyCode.D))
         {
            transq.localPosition = Vector3.zero;
         }
-        
         
     }
 }
