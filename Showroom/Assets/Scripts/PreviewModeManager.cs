@@ -13,5 +13,5 @@ public class PreviewModeManager : ScriptableObject
 
 public static class RunMode
 {
-    public static bool Develop = false;
+    public static bool Develop = true;
 }
