@@ -661,17 +661,17 @@ PrefabInstance:
     - target: {fileID: 1239508997376431294, guid: 68587cbbd69bae140b07605f7a7c1190,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99363106
+      value: 0.9789209
       objectReference: {fileID: 0}
     - target: {fileID: 1239508997376431294, guid: 68587cbbd69bae140b07605f7a7c1190,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.11268292
+      value: 0.20423971
       objectReference: {fileID: 0}
     - target: {fileID: 1239508997376431294, guid: 68587cbbd69bae140b07605f7a7c1190,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 12.94
+      value: 23.57
       objectReference: {fileID: 0}
     - target: {fileID: 1239508998471649717, guid: 68587cbbd69bae140b07605f7a7c1190,
         type: 3}
@@ -691,7 +691,7 @@ PrefabInstance:
     - target: {fileID: 1239508998471649717, guid: 68587cbbd69bae140b07605f7a7c1190,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.522
       objectReference: {fileID: 0}
     - target: {fileID: 1239508998471649717, guid: 68587cbbd69bae140b07605f7a7c1190,
         type: 3}
@@ -1514,8 +1514,10 @@ MonoBehaviour:
   sloup: {fileID: 0}
   timeStartedLerping: 1
   lerpTime: 5
+  speed: 1
   endPosition: {x: 0, y: -0.8, z: 0}
   startPosition: {x: 0, y: 2, z: 0}
+  manager: {fileID: 0}
 --- !u!1 &1921496168 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 22f15fe1671398c43b88ceb38c2fb80b,
@@ -1537,8 +1539,10 @@ MonoBehaviour:
   sloup: {fileID: 0}
   timeStartedLerping: 1
   lerpTime: 5
+  speed: 1
   endPosition: {x: 0, y: 1, z: 0}
   startPosition: {x: 0, y: -1.2, z: 0}
+  manager: {fileID: 0}
 --- !u!1001 &2147269743
 PrefabInstance:
   m_ObjectHideFlags: 0
