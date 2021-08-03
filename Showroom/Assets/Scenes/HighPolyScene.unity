@@ -382,6 +382,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 23.3
       objectReference: {fileID: 0}
+    - target: {fileID: 1239508998471649610, guid: 68587cbbd69bae140b07605f7a7c1190,
+        type: 3}
+      propertyPath: jumpHeight
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239508998471649610, guid: 68587cbbd69bae140b07605f7a7c1190,
+        type: 3}
+      propertyPath: groundDistance
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1239508998471649717, guid: 68587cbbd69bae140b07605f7a7c1190,
         type: 3}
       propertyPath: m_RootOrder

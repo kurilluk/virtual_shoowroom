@@ -24,7 +24,52 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    //void FixedUpdate()
+    //{
+    //    isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+
+    //    if (isGrounded && velocity.y < 0)
+    //    {
+    //        velocity.y = -2f;
+    //    }
+
+    //    //float x = Input.GetAxis("Horizontal");
+    //    //float z = Input.GetAxis("Vertical");
+
+    //    Vector3 move = Vector3.zero;
+
+    //    if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+    //    {
+    //        move = transform.forward;
+    //    }
+    //    if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+    //    {
+    //        move = -transform.forward;
+    //    }
+    //    if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+    //    {
+    //        move = transform.right;
+    //    }
+    //    if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+    //    {
+    //        move = -transform.right;
+    //    }
+
+        
+
+    //    controller.Move(move * speed * Time.deltaTime);
+
+    //    if (Input.GetButtonDown("Jump") && isGrounded)
+    //    {
+    //        velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+    //    }
+
+    //    velocity.y += gravity * Time.deltaTime;
+
+    //    controller.Move(velocity * Time.deltaTime);
+    //}
+
+    private void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
@@ -55,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
             move = -transform.right;
         }
 
-        
+
 
         controller.Move(move * speed * Time.deltaTime);
 
