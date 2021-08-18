@@ -66,7 +66,10 @@ public class MouseLook : MonoBehaviour
         if (!croaching)
         {
             croaching = true;
-            cameraTransform.position = new Vector3(transform.position.x, transform.position.y - croachDepth, transform.position.z);
+            //With LERP in order to make the Baloon effect
+            cameraTransform.position = new Vector3(transform.position.x, Mathf.Lerp(transform.position.y, transform.position.y - croachDepth, 2f), transform.position.z);
+
+            //cameraTransform.position = new Vector3(transform.position.x, transform.position.y - croachDepth, transform.position.z);
         }
         else
         {
