@@ -10,6 +10,7 @@ public class MouseLook : MonoBehaviour
     public Transform playerBody;
     [SerializeField] public float croachDepth = 1f;
     [SerializeField] public bool croaching = false;
+    [SerializeField] public float balooningDuration = 2f;
 
     public Transform cameraTransform;
     public Transform mainMenu;
@@ -32,17 +33,14 @@ public class MouseLook : MonoBehaviour
             
         }
         LookAround();
-        //if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.RightControl))
-        //if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
-        //{
-        //    Debug.Log("Control pressed");
 
-        //    cameraTransform.position = new Vector3 (transform.position.x, transform.position.y - croachDepth, transform.position.z);
-        //    Debug.Log(cameraTransform.position.y);
-        //}
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-            Croach();
+            StartCoroutine(BaloonDown());
+        }
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            StartCoroutine(BaloonUp());
         }
 
     }
@@ -60,22 +58,41 @@ public class MouseLook : MonoBehaviour
         playerBody.Rotate(Vector3.up * mouseX);
     }
 
-    void Croach()
+    IEnumerator BaloonDown()
     {
+        //This should be just one function, just the increments should change from positive to negative... :)
+        float timeElapsed = 0f;
+        float startValue = 0f;
+        float endValue = -0.05f;
+        float heightOfPerspective;
 
-        if (!croaching)
+        while (timeElapsed < balooningDuration)
         {
-            croaching = true;
-            //With LERP in order to make the Baloon effect
-            cameraTransform.position = new Vector3(transform.position.x, Mathf.Lerp(transform.position.y, transform.position.y - croachDepth, 2f), transform.position.z);
+            heightOfPerspective = Mathf.Lerp(startValue, endValue, timeElapsed / balooningDuration);
+            cameraTransform.position = new Vector3(transform.position.x, transform.position.y + heightOfPerspective, transform.position.z);
+            timeElapsed += Time.deltaTime;
 
-            //cameraTransform.position = new Vector3(transform.position.x, transform.position.y - croachDepth, transform.position.z);
+            yield return null;
         }
-        else
-        {
-            croaching = false;
-            cameraTransform.position = new Vector3(transform.position.x, transform.position.y + croachDepth, transform.position.z);
-        }
-
     }
+
+    IEnumerator BaloonUp()
+    {
+        float timeElapsed = 0f;
+        float startValue = 0f;
+        float endValue = 0.05f;
+        float heightOfPerspective;
+
+        //Smaller increments needed, clamping as well
+        // Need better clamping than this:  && cameraTransform.position.y > -1f && cameraTransform.position.y < 3f
+        while (timeElapsed < balooningDuration)
+        {
+            heightOfPerspective = Mathf.Lerp(startValue, endValue, timeElapsed / balooningDuration);
+            cameraTransform.position = new Vector3(transform.position.x, transform.position.y + heightOfPerspective, transform.position.z);
+            timeElapsed += Time.deltaTime;
+
+            yield return null;
+        }
+    }
+
 }
