@@ -22,7 +22,7 @@ public class SelectionManager : MonoBehaviour
             var selectionRenderer = activeSelection.GetComponent<Renderer>();
             //selectionRenderer.material.color = defaultColor;
             selectionRenderer.material = defaultMaterial;
-            Debug.Log("The material changed to Default." + defaultMaterial.ToString());
+            Debug.Log("The material changed to Default color." + defaultMaterial.ToString());
             activeSelection = null;
         }
 
@@ -36,12 +36,12 @@ public class SelectionManager : MonoBehaviour
             if (selectionRenderer != null)
             {
                 selectionRenderer.material = highlightedMaterial;
-                Debug.Log("Material changed to Highlighted." + highlightedMaterial.ToString());
+                Debug.Log("Material changed to Highlighted color." + highlightedMaterial.ToString());
 
                 if (Input.GetMouseButtonDown(0))
                 {
                     Debug.Log("Click to enable the Pop-up window now!");
-                    if (selection.GetChild(0).gameObject.activeSelf == false)
+                    if (selection.GetChild(0).gameObject.active == false)
                     {
                         selection.GetChild(0).gameObject.SetActive(true);
                     }
