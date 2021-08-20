@@ -69,8 +69,8 @@ public class Twilight : MonoBehaviour
             }
             else
             {
-                myLight.intensity = Time.time * rangeSpeed;
-                if (myLight.intensity >= maxRange)
+                myLight.intensity = Time.time * intensitySpeed;
+                if (myLight.intensity >= maxIntensity)
                 {
                     changeIntensity = false;
                 }
