@@ -63,7 +63,7 @@ public class MouseLook : MonoBehaviour
         //This should be just one function, just the increments should change from positive to negative... :)
         float timeElapsed = 0f;
         float startValue = 0f;
-        float endValue = -0.05f;
+        float endValue = -0.005f;
         float heightOfPerspective;
 
         while (timeElapsed < balooningDuration)
@@ -80,7 +80,7 @@ public class MouseLook : MonoBehaviour
     {
         float timeElapsed = 0f;
         float startValue = 0f;
-        float endValue = 0.05f;
+        float endValue = 0.005f;
         float heightOfPerspective;
 
         //Smaller increments needed, clamping as well
