@@ -37,27 +37,53 @@ public class Twilight : MonoBehaviour
         }
     }
 
+    IEnumerator Born()
+    {
+        for (float range = myLight.range; range >= maxRange; range = Time.time * rangeSpeed)
+        {
+            myLight.range = range;
+            yield return null;
+        }
+    }
+
+    IEnumerator IncreaseIntensity()
+    {
+        for (float intensity = myLight.intensity; intensity >= maxIntensity; intensity = Time.time * intensitySpeed)
+        {
+            myLight.intensity = intensity;
+            //yield return null;
+            yield return new WaitForSeconds(.1f);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown("i"))
+        {
+            StartCoroutine("IncreaseIntensity");
+        }
+
         if (RunMode.Develop)
             return;
 
         if (changeRange)
         {
-            if (repeatRange) {
+            if (repeatRange)
+            {
 
                 myLight.range = Mathf.PingPong(Time.time * rangeSpeed, maxRange);
-            } else
+            }
+            else
             {
                 myLight.range = Time.time * rangeSpeed;
-                if(myLight.range >= maxRange)
+                if (myLight.range >= maxRange)
                 {
                     changeRange = false;
                 }
             }
-            
-            
+
+
         }
 
         if (changeIntensity)
