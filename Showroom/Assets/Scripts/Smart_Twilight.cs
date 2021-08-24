@@ -5,18 +5,22 @@ using UnityEngine;
 public class Smart_Twilight : MonoBehaviour
 {
     public float maxIntensity;
+    public float maxRange;
     public float speed;
 
-    private Light[] lights;
+    public Color startColor;
+    public Color endColor;
+
+    private Light[] _lights;
 
 
     // Start is called before the first frame update
     void Start()
     {
         // Read all children lights
-        lights = gameObject.GetComponentsInChildren<Light>(true);
+        _lights = gameObject.GetComponentsInChildren<Light>(true);
 
-        foreach (Light light in lights)
+        foreach (Light light in _lights)
         {
             light.intensity = 0f;
             //light.range = 0f;
@@ -32,15 +36,22 @@ public class Smart_Twilight : MonoBehaviour
         if (Input.GetKeyDown("i"))
         {
             StopAllCoroutines();
-            foreach(Light light in lights)
+            foreach(Light light in _lights)
                 StartCoroutine(IncreaseIntensity(light));
         }
 
         if (Input.GetKeyDown("u"))
         {
             StopAllCoroutines();
-            foreach (Light light in lights)
+            foreach (Light light in _lights)
                 StartCoroutine(DecreaseIntensity(light));
+        }
+
+        if (Input.GetKeyDown("o"))
+        {
+            StopAllCoroutines();
+            foreach (Light light in _lights)
+                StartCoroutine(Animation(light));
         }
     }
 
@@ -48,7 +59,7 @@ public class Smart_Twilight : MonoBehaviour
     {
         for (float i = light.intensity; i < maxIntensity; i += Time.deltaTime * speed)
         {
-            //Debug.Log(light.name + ".i= " + i);
+            Debug.Log(light.name + ".i= " + i);
             light.intensity = i;
             yield return null;
         }
@@ -57,9 +68,22 @@ public class Smart_Twilight : MonoBehaviour
     {
         for (float i = light.intensity; i > 0; i -= Time.deltaTime * speed)
         {
-            //Debug.Log(light.name + ".i= " + i);
+            Debug.Log(light.name + ".i= " + i);
             light.intensity = i;
             yield return null;
         }
+    }
+
+    IEnumerator Animation(Light light)
+    {
+        for(float i = 0f; i <= 1f; i += Time.deltaTime * speed)
+        {
+            light.intensity = maxIntensity * i;
+            light.range = maxRange * i;
+            light.color = Color.Lerp(startColor, endColor, i);
+            Debug.Log(light.name + ".i= " + i);
+            yield return null;        
+        }
+
     }
 }
