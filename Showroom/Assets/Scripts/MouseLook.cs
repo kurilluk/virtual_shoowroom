@@ -33,7 +33,7 @@ public class MouseLook : MonoBehaviour
             
         //}
 
-        LookAround();
+        Smart_LookAround(0.25f);
 
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
@@ -46,30 +46,42 @@ public class MouseLook : MonoBehaviour
 
     }
 
+    void Smart_LookAround(float sensitivity)
+    {
+        // Get mouse position
+        Vector3 mousePos = Input.mousePosition;
+        
+        // Calculate size of screen and middle point position
+        double midX = Screen.width * 0.5;
+        double midY = Screen.height * 0.5;
+
+        // Calculate how far is mouse from mid point of the screen
+        float mouseX = (float)((mousePos.x - midX) / midX);
+        float mouseY = (float)((mousePos.y - midY) / midY);
+
+        // Rotate view when right button is pressed on mouse
+        if (Input.GetMouseButton(1))
+        {
+            cameraTransform.Rotate(-mouseY * sensitivity, 0f, 0f);
+            playerBody.Rotate(Vector3.up * mouseX);
+        }
+            
+
+        // Math.Abs(mouseY) > 0.01f && Math.Abs(mouseY) < 0.95f &&
+        // Math.Abs(mouseX) > 0.01f && Math.Abs(mouseX) < 0.95f && 
+    }
+
     void LookAround()
     {
         //TODO: CHeck mouse sensitivity VS pixel size of screen (HiDPI problem)
-        //float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;// * Time.deltaTime;
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;// * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;// * Time.deltaTime;
-
-        Vector3 mousePos = Input.mousePosition;
-        {
-            Debug.Log(mousePos.x);
-            Debug.Log(mousePos.y);
-        }
-        double width = Screen.width * 0.5;
-        float mouseX = (float) ((mousePos.x - width) / width);
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        transform.localRotation = Quaternion.Euler(xRotation * 0.5f, 0f, 0f);
 
-        if(Math.Abs(mouseX)> 0.15f)
-            playerBody.Rotate(Vector3.up * mouseX);
-    
-        Debug.Log("Screen Width : " + Screen.width);
-        Debug.Log("Screen Width : " + Screen.height);
-
+        playerBody.Rotate(Vector3.up * mouseX * 0.75f);
     }
 
     IEnumerator BaloonDown()
