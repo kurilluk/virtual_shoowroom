@@ -2050,17 +2050,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: InfoSphere-ScreenSpace (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2272029503674391751, guid: bf40600cb2a28f247b5b5fcca6be460c,
+        type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 8728f79322fd678468eea30bf433e376, type: 3}
     - target: {fileID: 2272029503960189883, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_text
-      value: "Zast\xE1vka"
+      value: "Voz\xED\u010Dek"
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504035924477, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_text
-      value: "Zde se voz\xED\u010Dek zastav\xED, aby mohlo robotick\xE9 rameno vykonat
-        po\u017Eadovan\xFD \xFAkon. Posl\xE9ze zase vyraz\xED d\xE1l na svoj\xED
-        trasu."
+      value: "Automatick\xFD voz\xED\u010Dek um\xED n\xE1sledovat ostatn\xED a d\xEDky
+        informac\xEDm z kolejnice nikdy nenaraz\xED. P\u0159ed ka\u017Edou v\xFDhybkou
+        a zast\xE1vkou dostane spr\xE1vn\xE9 informace od \u0159\xEDd\xEDc\xEDho
+        software, kdy a kam m\u016F\u017Ee vyrazit. Na ka\u017Ed\xE9 kolejnici m\xE1
+        p\u0159edem ur\u010Den\xFD sm\u011Br a d\xEDky tomu nem\u016F\u017Ee doj\xEDt
+        ke kolizi."
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504245795344, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
