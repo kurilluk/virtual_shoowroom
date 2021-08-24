@@ -1415,6 +1415,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1145793602, guid: 68587cbbd69bae140b07605f7a7c1190, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 85c7093973ac3d24a9f557305f5b444c, type: 3}
     - target: {fileID: 1494002700, guid: 68587cbbd69bae140b07605f7a7c1190, type: 3}
       propertyPath: defaultMaterial
       value: 
