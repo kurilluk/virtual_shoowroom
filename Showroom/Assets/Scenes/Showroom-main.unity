@@ -1951,97 +1951,104 @@ PrefabInstance:
       propertyPath: m_Name
       value: InfoSphere-ScreenSpace (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2272029503674391751, guid: bf40600cb2a28f247b5b5fcca6be460c,
+        type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 8728f79322fd678468eea30bf433e376, type: 3}
     - target: {fileID: 2272029503960189883, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_text
-      value: "Zast\xE1vka"
+      value: "Voz\xED\u010Dek"
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504035924477, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_text
-      value: "Zde se voz\xED\u010Dek zastav\xED, aby mohlo robotick\xE9 rameno vykonat
-        po\u017Eadovan\xFD \xFAkon. Posl\xE9ze zase vyraz\xED d\xE1l na svoj\xED
-        trasu."
+      value: "Voz\xED\u010Dek se po kolejnic\xEDch pohybuje jednosm\u011Brn\u011B
+        a d\xEDky chytr\xFDm m\xEDst\u016Fm,p\u0159ed vyhybkami a stanicemi se v\u017Edy
+        dozv\xED ve spr\xE1vn\xFD \u010Das, kam m\xE1 jet a jak rychle. Jeho p\u0159edn\xED
+        senzor mu umo\u017Enuje sledovat p\u0159edchoz\xED voz\xED\u010Dek na kolejnici
+        a t\xEDm je zaji\u0161t\u011Bn plynulej\u0161\xED provoz."
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504245795344, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504245795344, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504245795344, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 517.9853
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504245795344, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 258.99265
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504245795344, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -341.85468
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504337039606, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504337039606, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504337039606, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 517.9853
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504337039606, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 258.99265
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504337039606, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -834.3397
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504353478977, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504353478977, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504353478977, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 517.9853
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504353478977, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 258.99265
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504353478977, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504361299376, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504361299383, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
