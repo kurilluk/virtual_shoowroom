@@ -11,10 +11,11 @@ public class AccessMenu : MonoBehaviour
     [SerializeField] public Transform crossHair;
     private void Start()
     {
-        if (mainMenu.GetChild(0).gameObject.activeSelf == false)
-        {
-            ShowMainMenu();
-        }
+        // Don't want to see the menu at the begining
+        //if (mainMenu.GetChild(0).gameObject.activeSelf == false)
+        //{
+        //    ShowMainMenu();
+        //}
         
 
         //Scene menuScene = SceneManager.GetSceneByName("MainMenuScene");
