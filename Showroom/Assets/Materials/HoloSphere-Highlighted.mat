@@ -92,7 +92,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Innerfresnelintensity: 0
+    - _Innerfresnelintensity: 0.373
     - _Invert: 1
     - _Invertmaintexture: 0
     - _Invertsecondarytexture: 0
@@ -102,7 +102,7 @@ Material:
     - _Noisescale: 50
     - _Noisesize: 0
     - _OcclusionStrength: 1
-    - _Outerfresnelintensity: 0.52
+    - _Outerfresnelintensity: 1
     - _Parallax: 0.02
     - _Power: 1.22
     - _Pulseamplitude: 0.25
