@@ -1027,6 +1027,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -410.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1239508997376431289, guid: 68587cbbd69bae140b07605f7a7c1190,
+        type: 3}
+      propertyPath: m_ClearFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1239508997376431294, guid: 68587cbbd69bae140b07605f7a7c1190,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -1041,6 +1046,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 23.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239508997376431295, guid: 68587cbbd69bae140b07605f7a7c1190,
+        type: 3}
+      propertyPath: mouseSensitivity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239508998471649610, guid: 68587cbbd69bae140b07605f7a7c1190,
+        type: 3}
+      propertyPath: speed
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1239508998471649717, guid: 68587cbbd69bae140b07605f7a7c1190,
         type: 3}

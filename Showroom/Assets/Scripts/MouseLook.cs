@@ -6,7 +6,7 @@ using UnityEngine;
 public class MouseLook : MonoBehaviour
 {
     //public GameObject sensitivity;
-    public float mouseSensitivity = 100f;
+    public float mouseSensitivity;
     public Transform playerBody;
     [SerializeField] public float croachDepth = 1f;
     [SerializeField] public bool croaching = false;
@@ -21,17 +21,18 @@ public class MouseLook : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
         cameraTransform = transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (mainMenu.GetChild(0).gameObject.activeSelf == false)
-        {
+        //if (mainMenu.GetChild(0).gameObject.activeSelf == false)
+        //{
             
-        }
+        //}
+
         LookAround();
 
         if (Input.GetKeyDown(KeyCode.LeftControl))
@@ -48,14 +49,27 @@ public class MouseLook : MonoBehaviour
     void LookAround()
     {
         //TODO: CHeck mouse sensitivity VS pixel size of screen (HiDPI problem)
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        //float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;// * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;// * Time.deltaTime;
+
+        Vector3 mousePos = Input.mousePosition;
+        {
+            Debug.Log(mousePos.x);
+            Debug.Log(mousePos.y);
+        }
+        double width = Screen.width * 0.5;
+        float mouseX = (float) ((mousePos.x - width) / width);
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
 
-        playerBody.Rotate(Vector3.up * mouseX);
+        if(Math.Abs(mouseX)> 0.15f)
+            playerBody.Rotate(Vector3.up * mouseX);
+    
+        Debug.Log("Screen Width : " + Screen.width);
+        Debug.Log("Screen Width : " + Screen.height);
+
     }
 
     IEnumerator BaloonDown()
