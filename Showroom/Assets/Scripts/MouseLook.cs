@@ -6,7 +6,7 @@ using UnityEngine;
 public class MouseLook : MonoBehaviour
 {
     //public GameObject sensitivity;
-    public float mouseSensitivity = 100f;
+    public float mouseSensitivity;
     public Transform playerBody;
     [SerializeField] public float croachDepth = 1f;
     [SerializeField] public bool croaching = false;
@@ -21,18 +21,19 @@ public class MouseLook : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
         cameraTransform = transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (mainMenu.GetChild(0).gameObject.activeSelf == false)
-        {
+        //if (mainMenu.GetChild(0).gameObject.activeSelf == false)
+        //{
             
-        }
-        LookAround();
+        //}
+
+        Smart_LookAround(0.25f);
 
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
@@ -45,17 +46,42 @@ public class MouseLook : MonoBehaviour
 
     }
 
+    void Smart_LookAround(float sensitivity)
+    {
+        // Get mouse position
+        Vector3 mousePos = Input.mousePosition;
+        
+        // Calculate size of screen and middle point position
+        double midX = Screen.width * 0.5;
+        double midY = Screen.height * 0.5;
+
+        // Calculate how far is mouse from mid point of the screen
+        float mouseX = (float)((mousePos.x - midX) / midX);
+        float mouseY = (float)((mousePos.y - midY) / midY);
+
+        // Rotate view when right button is pressed on mouse
+        if (Input.GetMouseButton(1))
+        {
+            cameraTransform.Rotate(-mouseY * sensitivity, 0f, 0f);
+            playerBody.Rotate(Vector3.up * mouseX);
+        }
+            
+
+        // Math.Abs(mouseY) > 0.01f && Math.Abs(mouseY) < 0.95f &&
+        // Math.Abs(mouseX) > 0.01f && Math.Abs(mouseX) < 0.95f && 
+    }
+
     void LookAround()
     {
         //TODO: CHeck mouse sensitivity VS pixel size of screen (HiDPI problem)
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;// * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;// * Time.deltaTime;
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        transform.localRotation = Quaternion.Euler(xRotation * 0.5f, 0f, 0f);
 
-        playerBody.Rotate(Vector3.up * mouseX);
+        playerBody.Rotate(Vector3.up * mouseX * 0.75f);
     }
 
     IEnumerator BaloonDown()

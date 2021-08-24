@@ -8,22 +8,22 @@ public class SelectionManager : MonoBehaviour
     [SerializeField] public Material defaultMaterial;
     //[SerializeField] public Color highlightedColor;
     //[SerializeField] public Color defaultColor;
-    [SerializeField] public string selectableTag = "Selectable";
+    //[SerializeField] public string selectableTag = "Selectable";
 
     [SerializeField] private LayerMask layerMask;
 
-    private Transform activeSelection;
+    private Transform _activeSelection;
 
     // Update is called once per frame
     void Update()
     {
-        if (activeSelection != null) 
+        if (_activeSelection != null) 
         {
-            var selectionRenderer = activeSelection.GetComponent<Renderer>();
+            var selectionRenderer = _activeSelection.GetComponent<Renderer>();
             //selectionRenderer.material.color = defaultColor;
             selectionRenderer.material = defaultMaterial;
             Debug.Log("The material changed to Default color." + defaultMaterial.ToString());
-            activeSelection = null;
+            _activeSelection = null;
         }
 
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -51,7 +51,7 @@ public class SelectionManager : MonoBehaviour
                     }
                 }
             }
-            activeSelection = selection;
+            _activeSelection = selection;
  
 
         }

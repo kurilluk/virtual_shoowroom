@@ -60,7 +60,7 @@ public class AccessMenu : MonoBehaviour
     public void ShowMainMenu()
     {
         //Lock cursor and make cross hair dissappear
-        Cursor.lockState = CursorLockMode.Confined;
+        //Cursor.lockState = CursorLockMode.Confined;
         crossHair.GetChild(0).gameObject.SetActive(false);
 
         //Make the Main menu visible
@@ -71,7 +71,7 @@ public class AccessMenu : MonoBehaviour
     public void HideMainMenu()
     {
         //Unlock cursor and show cross hair
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
         crossHair.GetChild(0).gameObject.SetActive(true);
 
         //Hide main menu
