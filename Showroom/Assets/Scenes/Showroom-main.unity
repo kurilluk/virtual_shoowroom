@@ -536,17 +536,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: InfoSphere-ScreenSpace (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2272029503674391751, guid: bf40600cb2a28f247b5b5fcca6be460c,
+        type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 13317e482ea4b6749b8d6273972ed16e, type: 3}
     - target: {fileID: 2272029503960189883, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_text
-      value: "Zast\xE1vka"
+      value: Stop
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504035924477, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_text
-      value: "Zde se voz\xED\u010Dek zastav\xED, aby mohlo robotick\xE9 rameno vykonat
-        po\u017Eadovan\xFD \xFAkon. Posl\xE9ze zase vyraz\xED d\xE1l na svoj\xED
-        trasu."
+      value: At this stop, the shuttle is ready to interact with the robot. This
+        is the only place where something can be done on the shuttle's platform.
+        Once the operation is done, the shuttle can continue with its journey.
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504245795344, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
@@ -1012,79 +1017,103 @@ PrefabInstance:
       propertyPath: m_Name
       value: InfoSphere-ScreenSpace
       objectReference: {fileID: 0}
+    - target: {fileID: 2272029503674391751, guid: bf40600cb2a28f247b5b5fcca6be460c,
+        type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 1dc7d2ce2da6d9f479321e479aa34655, type: 3}
+    - target: {fileID: 2272029503960189883, guid: bf40600cb2a28f247b5b5fcca6be460c,
+        type: 3}
+      propertyPath: m_text
+      value: Dispatch
+      objectReference: {fileID: 0}
+    - target: {fileID: 2272029504035924477, guid: bf40600cb2a28f247b5b5fcca6be460c,
+        type: 3}
+      propertyPath: m_text
+      value: This smart dispatch always gets proper info from the operating software
+        and chooses the right way for each shuttle which arrives to it. That's why
+        the shuttle stops before it in order to get the infor where should it go.
+        There are two types of dispatches, one for merging and another one for splitting
+        the trajectories.
+      objectReference: {fileID: 0}
     - target: {fileID: 2272029504245795344, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504245795344, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504245795344, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 517.9853
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504245795344, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 258.99265
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504245795344, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -341.85468
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504337039606, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504337039606, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504337039606, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 517.9853
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504337039606, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 258.99265
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504337039606, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -834.3397
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504353478977, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504353478977, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504353478977, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 517.9853
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504353478977, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 258.99265
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504353478977, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2272029504361299376, guid: bf40600cb2a28f247b5b5fcca6be460c,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504361299383, guid: bf40600cb2a28f247b5b5fcca6be460c,
@@ -2758,17 +2787,23 @@ PrefabInstance:
       propertyPath: m_Name
       value: InfoSphere-ScreenSpace (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2272029503674391751, guid: bf40600cb2a28f247b5b5fcca6be460c,
+        type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 21034a3f402369b47bdf6bf67d37c6ad, type: 3}
     - target: {fileID: 2272029503960189883, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_text
-      value: "Zast\xE1vka"
+      value: Gripper
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504035924477, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
       propertyPath: m_text
-      value: "Zde se voz\xED\u010Dek zastav\xED, aby mohlo robotick\xE9 rameno vykonat
-        po\u017Eadovan\xFD \xFAkon. Posl\xE9ze zase vyraz\xED d\xE1l na svoj\xED
-        trasu."
+      value: Each robot is equipped with a gripper enabling it to grab objects and
+        put them in different places. This operation is commonly reffered to as "Pick
+        and Place" task. The previewed gripper operates using pneumatic pressure
+        to close its jaws.
       objectReference: {fileID: 0}
     - target: {fileID: 2272029504245795344, guid: bf40600cb2a28f247b5b5fcca6be460c,
         type: 3}
