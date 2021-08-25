@@ -4,8 +4,8 @@ ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
-      74: -3941475562190182133
-    second: Robot1_2
+      74: 6469786109821208555
+    second: AnimRobot1_2
   externalObjects: {}
   materials:
     materialImportMode: 1
