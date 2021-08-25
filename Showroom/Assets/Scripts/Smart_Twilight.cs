@@ -22,10 +22,10 @@ public class Smart_Twilight : MonoBehaviour
 
         foreach (Light light in _lights)
         {
-            light.intensity = 0f;
+            //light.intensity = 0f;
             //light.range = 0f;
 
-            //StartCoroutine(IncreaseIntensity(light));
+            StartCoroutine(Animation(light));
         }
 
     }

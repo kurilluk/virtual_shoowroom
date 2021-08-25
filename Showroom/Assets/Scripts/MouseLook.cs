@@ -33,7 +33,7 @@ public class MouseLook : MonoBehaviour
             
         //}
 
-        Smart_LookAround(0.25f);
+        Smart_LookAround(0.5f);
 
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
@@ -55,9 +55,14 @@ public class MouseLook : MonoBehaviour
         double midX = Screen.width * 0.5;
         double midY = Screen.height * 0.5;
 
-        // Calculate how far is mouse from mid point of the screen
+        // Calculate how far (in %) is mouse from mid point of the screen
         float mouseX = (float)((mousePos.x - midX) / midX);
         float mouseY = (float)((mousePos.y - midY) / midY);
+
+        // Synchone FPS
+        var speed = 50f;
+        mouseX *= Time.deltaTime * speed;
+        mouseY *= Time.deltaTime * speed;
 
         // Rotate view when right button is pressed on mouse
         if (Input.GetMouseButton(1))
