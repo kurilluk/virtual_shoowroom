@@ -60,7 +60,7 @@ public class MouseLook : MonoBehaviour
         float mouseY = (float)((mousePos.y - midY) / midY);
 
         // Synchone FPS
-        var speed = 50f;
+        var speed = 100f;
         mouseX *= Time.deltaTime * speed;
         mouseY *= Time.deltaTime * speed;
 
