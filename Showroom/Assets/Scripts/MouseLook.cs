@@ -16,7 +16,7 @@ public class MouseLook : MonoBehaviour
     public Transform mainMenu;
     //bool isMenuOpen = true;
 
-    float xRotation = 20f;
+    float xRotation = 0f;
 
     // Start is called before the first frame update
     void Start()
