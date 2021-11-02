@@ -45,7 +45,7 @@ public class Rail : MonoBehaviour
         }
     }
 
-    private Rail _nextRail = null;
+    public  Rail _nextRail = null;
     public Rail NextRail
     {
         get { return _nextRail; }

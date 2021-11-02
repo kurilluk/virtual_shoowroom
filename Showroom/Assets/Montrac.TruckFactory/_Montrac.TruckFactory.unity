@@ -489,11 +489,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 254329569}
+  - component: {fileID: 254329572}
   - component: {fileID: 254329571}
   - component: {fileID: 254329570}
-  - component: {fileID: 254329572}
   m_Layer: 0
-  m_Name: turnout_17
+  m_Name: 02_Switch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -576,6 +576,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: {x: 0, y: 0, z: 0.5999999}
+  _nextRail: {fileID: 518104364}
   Cart: {fileID: 0}
 --- !u!1 &267847292
 GameObject:
@@ -860,9 +861,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 518104361}
+  - component: {fileID: 518104364}
   - component: {fileID: 518104363}
   - component: {fileID: 518104362}
-  - component: {fileID: 518104364}
   m_Layer: 0
   m_Name: move_110_10
   m_TagString: Untagged
@@ -945,7 +946,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 730bfc999f96bb649a012ef1de0bebb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: {x: 0, y: 0, z: 1.1}
+  Direction: {x: 0, y: 0, z: 1.1000001}
+  _nextRail: {fileID: 1247803556}
   Cart: {fileID: 0}
 --- !u!4 &533771924
 Transform:
@@ -1534,11 +1536,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1030585733}
+  - component: {fileID: 1030585736}
   - component: {fileID: 1030585735}
   - component: {fileID: 1030585734}
-  - component: {fileID: 1030585736}
   m_Layer: 0
-  m_Name: move_110_09
+  m_Name: 01_Rail_110
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1619,8 +1621,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 730bfc999f96bb649a012ef1de0bebb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: {x: 0, y: 0, z: 1.6999998}
-  Cart: {fileID: 0}
+  Direction: {x: 0, y: 0, z: 1.0999999}
+  _nextRail: {fileID: 254329572}
+  Cart: {fileID: 1366926858}
 --- !u!1 &1148980992
 GameObject:
   m_ObjectHideFlags: 0
@@ -1809,9 +1812,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1247803553}
+  - component: {fileID: 1247803556}
   - component: {fileID: 1247803555}
   - component: {fileID: 1247803554}
-  - component: {fileID: 1247803556}
   m_Layer: 0
   m_Name: turnout_18
   m_TagString: Untagged
@@ -1896,6 +1899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: {x: 0, y: 0, z: 0.5999999}
+  _nextRail: {fileID: 1828539001}
   Cart: {fileID: 0}
 --- !u!1 &1319263801
 GameObject:
@@ -1913,6 +1917,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1366926857 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e8440bbf2ae06204ca87284e0d09e1d9,
+    type: 3}
+  m_PrefabInstance: {fileID: 221130033}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1366926858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366926857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 101072390986e934e9feb8b37624ae0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.5
+  currentRail: {fileID: 0}
 --- !u!1 &1402483341
 GameObject:
   m_ObjectHideFlags: 0
@@ -2504,9 +2528,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1828538998}
+  - component: {fileID: 1828539001}
   - component: {fileID: 1828539000}
   - component: {fileID: 1828538999}
-  - component: {fileID: 1828539001}
   m_Layer: 0
   m_Name: move_110_11
   m_TagString: Untagged
@@ -2590,6 +2614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: {x: 1, y: 0, z: 0}
+  _nextRail: {fileID: 0}
   Cart: {fileID: 0}
 --- !u!1 &1888993342
 GameObject:
