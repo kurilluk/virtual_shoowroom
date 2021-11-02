@@ -1619,7 +1619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 730bfc999f96bb649a012ef1de0bebb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: {x: 0, y: 0, z: 1.0999999}
+  Direction: {x: 0, y: 0, z: 1.6999998}
   Cart: {fileID: 0}
 --- !u!1 &1148980992
 GameObject:
@@ -1713,6 +1713,7 @@ GameObject:
   - component: {fileID: 1232730691}
   - component: {fileID: 1232730693}
   - component: {fileID: 1232730692}
+  - component: {fileID: 1232730694}
   m_Layer: 0
   m_Name: turnout_22
   m_TagString: Untagged
@@ -1784,6 +1785,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1232730690}
   m_Mesh: {fileID: 4300000, guid: b583806df56c18b4a90b8245c290ff82, type: 2}
+--- !u!114 &1232730694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232730690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c2adffc379c5ba47828741931887b67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MyInt: 75
+  m_MyVector: {x: 20, y: 1, z: 0}
+  m_MyGameObject: {fileID: 0}
 --- !u!1 &1247803552
 GameObject:
   m_ObjectHideFlags: 0
@@ -2393,6 +2409,7 @@ GameObject:
   - component: {fileID: 1792033871}
   - component: {fileID: 1792033873}
   - component: {fileID: 1792033872}
+  - component: {fileID: 1792033874}
   m_Layer: 0
   m_Name: turn_90_01
   m_TagString: Untagged
@@ -2463,6 +2480,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1792033870}
   m_Mesh: {fileID: 4300000, guid: e4b843daf3e54a342b5fd4c874cb7b70, type: 2}
+--- !u!114 &1792033874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792033870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c2adffc379c5ba47828741931887b67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MyInt: 75
+  m_MyVector: {x: 20, y: 1, z: 0}
+  m_MyGameObject: {fileID: 1030585736}
 --- !u!1 &1828538997
 GameObject:
   m_ObjectHideFlags: 0

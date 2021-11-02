@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class Cube
 {
-    private static float _size = 0.1f;
+    private static float _size = 0.05f;
     public static float Size 
     {
         get { return _size; }
@@ -22,17 +22,11 @@ public class Rail : MonoBehaviour
 {
     public Vector3 StartPoint
     {
-        get
-        {
-            return transform.position; 
-        }
-        set
-        {
-            transform.position = value;
-        }
+        get { return transform.position; }
+        set { transform.position = value; }
     }
 
-    public Vector3 Direction = Vector3.right;
+    public Vector3 Direction = Vector3.forward;
 
     public Vector3 EndPoint
     {
@@ -44,7 +38,9 @@ public class Rail : MonoBehaviour
             return StartPoint + Direction;
         }
 
-        set { Direction = value - StartPoint;
+        set 
+        { 
+            Direction = value - StartPoint;
             UnityEditor.SceneView.RepaintAll();
         }
     }
