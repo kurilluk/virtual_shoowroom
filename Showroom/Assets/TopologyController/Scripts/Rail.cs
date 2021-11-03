@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public static class Cube
 {
@@ -175,5 +176,10 @@ public class Rail : MonoBehaviour
     public float Distance(Vector3 position)
     {
        return Vector3.Distance(position, transform.position);
+    }
+
+    public void OnMove(InputAction.CallbackContext ctx)
+    {
+        Debug.Log(ctx);
     }
 }
