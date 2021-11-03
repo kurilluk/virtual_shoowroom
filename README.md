@@ -1,8 +1,7 @@
 # virtual_showroom
 ## The Unity project of a virtual showroom for the CIIRC Testbed Industry 4.0
 ---
-To contribute, please use chosen Unity version [2019.4.26 (LTS)](https://unity3d.com/unity/whats-new/2019.4.26).
-Updated to 2020.3.18f1 (LTS)
+To contribute, please use chosen Unity version [2020.3.21f1(LTS)](unityhub://2020.3.21f1/a38c86f6690f).
 
 Please, have a look on [Wiki](https://github.com/kurilluk/virtual_shoowroom/wiki) of this project, and feel free to add other interesting content.
 
