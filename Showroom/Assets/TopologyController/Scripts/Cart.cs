@@ -8,30 +8,55 @@ public class Cart : MonoBehaviour
     public float speed = 0.5f;
     public Rail currentRail;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    Animator _anim;
+    int up_110 = Animator.StringToHash("Move_110");
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        // if(currentRail != null)
-        // {
-        //     float distance = currentRail.Distance(transform.position);
-        //     Debug.Log("Distance: "+ distance);
-        //     if(distance > 0.01f)
-        //     Move();
-        //     else
-        //     currentRail = currentRail.nextRail;
-        // }
-  
+        _anim = GetComponent<Animator>();
     }
 
     public void Move()//Vector3 position)
     {
+        _anim.Play(up_110);
+        //StartCoroutine(MoveCart());
+
         //transform.position = position;
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);     
+        //transform.Translate(Vector3.forward * Time.deltaTime * speed);     
+    }
+
+    /// Pseudo code
+    /// 
+    /// check position and possibilities - get object of collision/rail object
+    /// 
+    /// enable controls and wait for user input
+    /// 
+    /// check if user comand is possible to perform (possibility to make users mistakes - learning process) 
+    /// 
+    /// perform action - disable controls
+    /// 
+
+    IEnumerator MoveCart()
+    {
+        //_anim.Play(up_110);
+
+        float counter = 0;
+        float waitTime = _anim.GetCurrentAnimatorStateInfo(0).length;
+
+        //Now, Wait until the current state is done playing
+        while (counter < (waitTime))
+        {
+            counter += Time.deltaTime;
+            Debug.Log("Animation");
+            yield return null;
+        }
+        Debug.Log("Ended");
+    }
+
+    private IEnumerator OnTriggerEnter(Collider other)
+    {
+        /// Actualize data - position/possibilities/...
+        /// Wait for input
+        yield return null;
     }
 }
