@@ -33,6 +33,14 @@ public class @GameInputs : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Turn"",
+                    ""type"": ""Button"",
+                    ""id"": ""584e4cde-7aac-4a9b-a671-7b8ac3804d2e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -57,6 +65,28 @@ public class @GameInputs : IInputActionCollection, IDisposable
                     ""action"": ""Initialize"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e3c83647-2855-4e52-a3e1-9eef7cd1b560"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4eb9e5c7-02ec-4dca-a6fd-93628a274f9d"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Turn"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -67,6 +97,7 @@ public class @GameInputs : IInputActionCollection, IDisposable
         m_Cart = asset.FindActionMap("Cart", throwIfNotFound: true);
         m_Cart_Initialize = m_Cart.FindAction("Initialize", throwIfNotFound: true);
         m_Cart_Move = m_Cart.FindAction("Move", throwIfNotFound: true);
+        m_Cart_Turn = m_Cart.FindAction("Turn", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -118,12 +149,14 @@ public class @GameInputs : IInputActionCollection, IDisposable
     private ICartActions m_CartActionsCallbackInterface;
     private readonly InputAction m_Cart_Initialize;
     private readonly InputAction m_Cart_Move;
+    private readonly InputAction m_Cart_Turn;
     public struct CartActions
     {
         private @GameInputs m_Wrapper;
         public CartActions(@GameInputs wrapper) { m_Wrapper = wrapper; }
         public InputAction @Initialize => m_Wrapper.m_Cart_Initialize;
         public InputAction @Move => m_Wrapper.m_Cart_Move;
+        public InputAction @Turn => m_Wrapper.m_Cart_Turn;
         public InputActionMap Get() { return m_Wrapper.m_Cart; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -139,6 +172,9 @@ public class @GameInputs : IInputActionCollection, IDisposable
                 @Move.started -= m_Wrapper.m_CartActionsCallbackInterface.OnMove;
                 @Move.performed -= m_Wrapper.m_CartActionsCallbackInterface.OnMove;
                 @Move.canceled -= m_Wrapper.m_CartActionsCallbackInterface.OnMove;
+                @Turn.started -= m_Wrapper.m_CartActionsCallbackInterface.OnTurn;
+                @Turn.performed -= m_Wrapper.m_CartActionsCallbackInterface.OnTurn;
+                @Turn.canceled -= m_Wrapper.m_CartActionsCallbackInterface.OnTurn;
             }
             m_Wrapper.m_CartActionsCallbackInterface = instance;
             if (instance != null)
@@ -149,6 +185,9 @@ public class @GameInputs : IInputActionCollection, IDisposable
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
+                @Turn.started += instance.OnTurn;
+                @Turn.performed += instance.OnTurn;
+                @Turn.canceled += instance.OnTurn;
             }
         }
     }
@@ -157,5 +196,6 @@ public class @GameInputs : IInputActionCollection, IDisposable
     {
         void OnInitialize(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
+        void OnTurn(InputAction.CallbackContext context);
     }
 }

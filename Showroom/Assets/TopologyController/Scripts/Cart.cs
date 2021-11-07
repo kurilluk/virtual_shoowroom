@@ -17,8 +17,15 @@ public class Cart : MonoBehaviour
     }
 
     public void Move()//Vector3 position)
+    { }
+
+        public void Move(bool turn)//Vector3 position)
     {
-        _anim.Play(up_110);
+        if (turn)
+            _anim.Play("Turn_left");
+        else
+            _anim.Play(up_110);
+
         //StartCoroutine(MoveCart());
 
         //transform.position = position;
@@ -51,6 +58,10 @@ public class Cart : MonoBehaviour
             yield return null;
         }
         Debug.Log("Ended");
+
+        while (_anim.GetCurrentAnimatorStateInfo(0).IsName("Move_110") &&
+        _anim.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f)
+        { }
     }
 
     private IEnumerator OnTriggerEnter(Collider other)

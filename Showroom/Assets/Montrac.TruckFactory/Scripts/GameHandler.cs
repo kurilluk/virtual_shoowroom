@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 
 public class GameHandler : MonoBehaviour
 {
@@ -23,12 +24,12 @@ public class GameHandler : MonoBehaviour
 
     }
 
-    private void MoveCart(InputAction.CallbackContext obj)
+    private void MoveCart(InputAction.CallbackContext context)
     {
-        if (cart == null)
+        if (!cart)
             return;
-       cart_class.Move();
-        
+        Debug.Log(context);
+        cart_class.Move(((int)((KeyControl)context.control).keyCode) != 63);
     }
 
     private void InitializeCart(InputAction.CallbackContext obj)
@@ -41,6 +42,8 @@ public class GameHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Application.targetFrameRate = 60;
+        print(Screen.currentResolution);
         //Transform cart = Instantiate(pfCart, new Vector3(1.2f, 0.85f, -4), Quaternion.identity);
     }
 
