@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 5479195310850979693}
   - component: {fileID: 6121538561976813508}
   m_Layer: 0
-  m_Name: Cart
+  m_Name: pf_Cart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
