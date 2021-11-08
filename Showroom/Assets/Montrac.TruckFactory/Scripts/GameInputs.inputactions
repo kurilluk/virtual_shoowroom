@@ -2,7 +2,7 @@
     "name": "GameInputs",
     "maps": [
         {
-            "name": "Cart",
+            "name": "Game",
             "id": "74f13029-89d2-4430-8f80-5d115a174216",
             "actions": [
                 {

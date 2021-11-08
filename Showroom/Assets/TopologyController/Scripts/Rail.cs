@@ -21,6 +21,7 @@ public static class Cube
 
 public class Rail : MonoBehaviour
 {
+    public int _possible_movement = Animator.StringToHash("Move_110");
     public Vector3 StartPoint
     {
         get { return transform.position; }
@@ -31,22 +32,22 @@ public class Rail : MonoBehaviour
 
     public Vector3 EndPoint
     {
-        get 
-        { 
+        get
+        {
             if (_endFromRail && NextRail != null)
                 return NextRail.StartPoint;
             else
-            return StartPoint + Direction;
+                return StartPoint + Direction;
         }
 
-        set 
-        { 
+        set
+        {
             Direction = value - StartPoint;
             UnityEditor.SceneView.RepaintAll();
         }
     }
 
-    public  Rail _nextRail = null;
+    public Rail _nextRail = null;
     public Rail NextRail
     {
         get { return _nextRail; }
@@ -102,69 +103,16 @@ public class Rail : MonoBehaviour
         a.z = b.z;
     }
 
-
-
-    //public void ImChanged()
-    //{
-    //    Debug.Log("I have changed to");
-    //}
-
     public Cart Cart; ///  later list of carts;
-
-
-    //public Vector3 EndPoint;
-
-    //[SerializeField]
-    //private Vector3 _startingPoint = Vector3.zero;
-
-    //public Vector3 StartPoint;
-
-    //public Vector3 StartPoint
-    //{
-    //    get
-    //    {
-    //        if (NextRail == null)
-    //            return _startingPoint;
-    //        else
-    //            return NextRail.transform.position;
-    //    }
-    //    set
-    //    { _startingPoint = value; }
-    //}
-
-    // Start is called before the first frame update
-    void Start()
-    {
-       //_startPoint = transform.position;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {   
-        if(Cart != null)
-        {
-            float distance = Distance(Cart.transform.position);
-            Debug.Log("RAIL: LINE, Distance: "+ distance);
-            if(distance > 0.01f)
-            Cart.Move(); /// moving forward now
-            else
-            {
-            NextRail.AddCart(Cart);
-            Cart = null;  
-            Debug.Log("RAIL: done - next turn.");
-            }
-        }
-
-    }
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawLine(StartPoint,EndPoint);
+        Gizmos.DrawLine(StartPoint, EndPoint);
         Gizmos.color = Color.green;
         Gizmos.DrawCube(StartPoint, Cube.Vector);
-        if(NextRail == null || EndPoint != NextRail.StartPoint)
+        if (NextRail == null || EndPoint != NextRail.StartPoint)
             Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(EndPoint, Cube.Vector*1.25f);
+        Gizmos.DrawWireCube(EndPoint, Cube.Vector * 1.25f);
     }
 
     public void AddCart(Cart cart)
@@ -175,11 +123,6 @@ public class Rail : MonoBehaviour
 
     public float Distance(Vector3 position)
     {
-       return Vector3.Distance(position, transform.position);
-    }
-
-    public void OnMove(InputAction.CallbackContext ctx)
-    {
-        Debug.Log(ctx);
+        return Vector3.Distance(position, transform.position);
     }
 }

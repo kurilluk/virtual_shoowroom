@@ -15,7 +15,7 @@ public class @GameInputs : IInputActionCollection, IDisposable
     ""name"": ""GameInputs"",
     ""maps"": [
         {
-            ""name"": ""Cart"",
+            ""name"": ""Game"",
             ""id"": ""74f13029-89d2-4430-8f80-5d115a174216"",
             ""actions"": [
                 {
@@ -93,11 +93,11 @@ public class @GameInputs : IInputActionCollection, IDisposable
     ],
     ""controlSchemes"": []
 }");
-        // Cart
-        m_Cart = asset.FindActionMap("Cart", throwIfNotFound: true);
-        m_Cart_Initialize = m_Cart.FindAction("Initialize", throwIfNotFound: true);
-        m_Cart_Move = m_Cart.FindAction("Move", throwIfNotFound: true);
-        m_Cart_Turn = m_Cart.FindAction("Turn", throwIfNotFound: true);
+        // Game
+        m_Game = asset.FindActionMap("Game", throwIfNotFound: true);
+        m_Game_Initialize = m_Game.FindAction("Initialize", throwIfNotFound: true);
+        m_Game_Move = m_Game.FindAction("Move", throwIfNotFound: true);
+        m_Game_Turn = m_Game.FindAction("Turn", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -144,39 +144,39 @@ public class @GameInputs : IInputActionCollection, IDisposable
         asset.Disable();
     }
 
-    // Cart
-    private readonly InputActionMap m_Cart;
-    private ICartActions m_CartActionsCallbackInterface;
-    private readonly InputAction m_Cart_Initialize;
-    private readonly InputAction m_Cart_Move;
-    private readonly InputAction m_Cart_Turn;
-    public struct CartActions
+    // Game
+    private readonly InputActionMap m_Game;
+    private IGameActions m_GameActionsCallbackInterface;
+    private readonly InputAction m_Game_Initialize;
+    private readonly InputAction m_Game_Move;
+    private readonly InputAction m_Game_Turn;
+    public struct GameActions
     {
         private @GameInputs m_Wrapper;
-        public CartActions(@GameInputs wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Initialize => m_Wrapper.m_Cart_Initialize;
-        public InputAction @Move => m_Wrapper.m_Cart_Move;
-        public InputAction @Turn => m_Wrapper.m_Cart_Turn;
-        public InputActionMap Get() { return m_Wrapper.m_Cart; }
+        public GameActions(@GameInputs wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Initialize => m_Wrapper.m_Game_Initialize;
+        public InputAction @Move => m_Wrapper.m_Game_Move;
+        public InputAction @Turn => m_Wrapper.m_Game_Turn;
+        public InputActionMap Get() { return m_Wrapper.m_Game; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(CartActions set) { return set.Get(); }
-        public void SetCallbacks(ICartActions instance)
+        public static implicit operator InputActionMap(GameActions set) { return set.Get(); }
+        public void SetCallbacks(IGameActions instance)
         {
-            if (m_Wrapper.m_CartActionsCallbackInterface != null)
+            if (m_Wrapper.m_GameActionsCallbackInterface != null)
             {
-                @Initialize.started -= m_Wrapper.m_CartActionsCallbackInterface.OnInitialize;
-                @Initialize.performed -= m_Wrapper.m_CartActionsCallbackInterface.OnInitialize;
-                @Initialize.canceled -= m_Wrapper.m_CartActionsCallbackInterface.OnInitialize;
-                @Move.started -= m_Wrapper.m_CartActionsCallbackInterface.OnMove;
-                @Move.performed -= m_Wrapper.m_CartActionsCallbackInterface.OnMove;
-                @Move.canceled -= m_Wrapper.m_CartActionsCallbackInterface.OnMove;
-                @Turn.started -= m_Wrapper.m_CartActionsCallbackInterface.OnTurn;
-                @Turn.performed -= m_Wrapper.m_CartActionsCallbackInterface.OnTurn;
-                @Turn.canceled -= m_Wrapper.m_CartActionsCallbackInterface.OnTurn;
+                @Initialize.started -= m_Wrapper.m_GameActionsCallbackInterface.OnInitialize;
+                @Initialize.performed -= m_Wrapper.m_GameActionsCallbackInterface.OnInitialize;
+                @Initialize.canceled -= m_Wrapper.m_GameActionsCallbackInterface.OnInitialize;
+                @Move.started -= m_Wrapper.m_GameActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m_GameActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m_GameActionsCallbackInterface.OnMove;
+                @Turn.started -= m_Wrapper.m_GameActionsCallbackInterface.OnTurn;
+                @Turn.performed -= m_Wrapper.m_GameActionsCallbackInterface.OnTurn;
+                @Turn.canceled -= m_Wrapper.m_GameActionsCallbackInterface.OnTurn;
             }
-            m_Wrapper.m_CartActionsCallbackInterface = instance;
+            m_Wrapper.m_GameActionsCallbackInterface = instance;
             if (instance != null)
             {
                 @Initialize.started += instance.OnInitialize;
@@ -191,8 +191,8 @@ public class @GameInputs : IInputActionCollection, IDisposable
             }
         }
     }
-    public CartActions @Cart => new CartActions(this);
-    public interface ICartActions
+    public GameActions @Game => new GameActions(this);
+    public interface IGameActions
     {
         void OnInitialize(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);

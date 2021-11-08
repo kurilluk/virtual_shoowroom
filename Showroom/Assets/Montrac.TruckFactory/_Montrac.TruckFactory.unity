@@ -495,9 +495,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 254329569}
-  - component: {fileID: 254329572}
   - component: {fileID: 254329571}
   - component: {fileID: 254329570}
+  - component: {fileID: 254329572}
   m_Layer: 0
   m_Name: 02_Turnout
   m_TagString: Untagged
@@ -569,21 +569,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 254329568}
   m_Mesh: {fileID: 4300000, guid: bcd28b6c881421647870a61f31196657, type: 2}
---- !u!114 &254329572
-MonoBehaviour:
+--- !u!65 &254329572
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 254329568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 730bfc999f96bb649a012ef1de0bebb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Direction: {x: 0, y: 0, z: 0.5999999}
-  _nextRail: {fileID: 518104364}
-  Cart: {fileID: 0}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.1, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &267847292
 GameObject:
   m_ObjectHideFlags: 0
@@ -3892,7 +3890,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _nextRail
       value: 
-      objectReference: {fileID: 254329572}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4338e3a315e4312408b8d4191014e0e6, type: 3}
 --- !u!1001 &9005227635291712211

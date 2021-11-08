@@ -8,7 +8,9 @@ using UnityEngine.InputSystem.Controls;
 public class GameHandler : MonoBehaviour
 {
     public Transform pfCart;
-    public Transform origin;
+    public Transform dynamicLayer;  // TODO: Create on run/if doesn't exist
+
+    public Rail initRail;
 
     private GameInputs _inputs;
     private Transform cart;
@@ -17,9 +19,9 @@ public class GameHandler : MonoBehaviour
     private void Awake()
     {
         _inputs = new GameInputs();
-        _inputs.Enable();
-        _inputs.Cart.Initialize.started += InitializeCart;
-        _inputs.Cart.Move.started += MoveCart;
+        _inputs.Game.Enable();
+        _inputs.Game.Initialize.started += InitializeCart;
+        _inputs.Game.Move.started += MoveCart;
         //_inputs.Cart.Move.Disable();
 
     }
@@ -29,13 +31,15 @@ public class GameHandler : MonoBehaviour
         if (!cart)
             return;
         Debug.Log(context);
-        cart_class.Move(((int)((KeyControl)context.control).keyCode) != 63);
+        //cart_class.Move(((int)((KeyControl)context.control).keyCode) != 63);
+        cart_class.Move();
     }
 
     private void InitializeCart(InputAction.CallbackContext obj)
     {
-        cart = Instantiate(pfCart, origin);
+        cart = Instantiate(pfCart, initRail.StartPoint, Quaternion.identity, dynamicLayer);
         cart_class = cart.GetComponent<Cart>();
+        initRail.AddCart(cart_class);
         //_inputs.Cart.Move.Enable();
     }
 
