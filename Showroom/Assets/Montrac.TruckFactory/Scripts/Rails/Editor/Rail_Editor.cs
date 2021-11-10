@@ -52,7 +52,7 @@ public class Rail_Editor : Editor
         rail.Cart = (Cart)EditorGUILayout.ObjectField("Cart on Rail", rail.Cart, typeof(Cart), true);
 
         GUILayout.Label("Options", EditorStyles.boldLabel);
-        Cube.Size = EditorGUILayout.Slider("Dot size", Cube.Size, 0.05f, 1f);
+        Rail.Cube.Size = EditorGUILayout.Slider("Dot size", Rail.Cube.Size, 0.05f, 1f);
 
         serializedObject.ApplyModifiedProperties();
 

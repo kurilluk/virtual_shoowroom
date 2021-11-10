@@ -30,7 +30,7 @@ public class Cart : MonoBehaviour
 
     public void Move()
     {
-        _anim.Play(currentRail._possible_movement);  //TODO: get type of movement from curent rail
+        _anim.Play(currentRail.Movement);  //TODO: get type of movement from curent rail
         //StartCoroutine(RunAnimation(up_110)); // Coroutine is not needed...
     }
 
