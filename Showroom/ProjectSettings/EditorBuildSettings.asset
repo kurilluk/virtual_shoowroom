@@ -4,7 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/DeltaRobot/DeltaRObot.unity
+    guid: 3c7a30c741a3269408e14539efe658da
+  - enabled: 0
+    path: Assets/Showroom/_Showroom.unity
+    guid: 5dfa7dc051277b441876c5a492e5dd24
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: f0eb274ff89c5874d8a9ad2da099b2d4,
       type: 2}
