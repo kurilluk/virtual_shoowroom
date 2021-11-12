@@ -17,21 +17,6 @@ public class MoveJ : MonoBehaviour
     public float rotationSpeed = 100f;
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //float rotAmount = 0;
-        //Transform currentArm = robotArm0; 
-
-        
-    }
-
     public void RotateArm0(float rotAmount)
     {
         RotateArm(rotAmount, robotArm0, 1);
@@ -65,7 +50,7 @@ public class MoveJ : MonoBehaviour
     public void RotateArm(float rotAmount, Transform currentArm, int whichAxis)
     {
         float rot = rotAmount * rotationSpeed * Time.deltaTime;
-        print(rot);
+        //Debug.Log(rot);
         switch (whichAxis)
         {
             case 0:
