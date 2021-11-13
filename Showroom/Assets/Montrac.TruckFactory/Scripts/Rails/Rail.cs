@@ -7,53 +7,63 @@ public class Rail : MonoBehaviour
 {
     #region FIELD
     // Start point is linked to the transform pivot
+    protected Vector3 _startPoint;
     public Vector3 StartPoint
     {
         get { return transform.position; }
         set { transform.position = value; }
     }
 
-    // Basic direction vector (hide?)
-    public Vector3 Direction = Vector3.forward;
-
-    // Used both - choose (compatibility issue)
-    public Rail _nextRail = null;
-    public Rail NextRail
-    {
-        get { return _nextRail; }
-        set { _nextRail = value; }
-    }
-
-    // Property not needed?
-    private bool _endFromRail = true;
-    public bool EndFromRail
-    {
-        get { return _endFromRail; }
-        set { _endFromRail = value; }
-    }
-
     // End point is calculated based on direction or next rail
+    protected Vector3 _endPoint;
     public Vector3 EndPoint
     {
         get
         {
-            if (_endFromRail && NextRail != null)
-                return NextRail.StartPoint;
+            if (nextRail != null && endFromRail)
+                return nextRail.StartPoint;
             else
-                return StartPoint + Direction;
+                return _endPoint;
         }
 
-        set
-        {
-            Direction = value - StartPoint;
-            UnityEditor.SceneView.RepaintAll();
-        }
+        set { _endPoint = value; UnityEditor.SceneView.RepaintAll(); } //UnityEditor.SceneView.RepaintAll();}
     }
+
+    // Next Rail for topology connection and end point definition
+    [SerializeField]
+    public Rail nextRail;
+
+    // Property not needed?
+    public  bool endFromRail ;
+
+    //public Rail NextRail
+    //{
+    //    get { return _nextRail; }
+    //    set { _nextRail = value; }
+    //}
+
+    // Basic direction vector (hide?)
+    //public Vector3 Direction = Vector3.forward;
+
+    //public bool EndFromRail
+    //{
+    //    get { return _endFromRail; }
+    //    set { _endFromRail = value; }
+    //}
     #endregion
+
+
+    private void Awake()
+    {
+        _startPoint = transform.position;
+        _endPoint = transform.position;
+        nextRail = null;
+        endFromRail = false;
+    }
 
     #region CART
 
-    public Cart Cart; ///  later list of carts;
+    protected Cart Cart; ///  later list of carts;
     public void AddCart(Cart cart)
     {
         this.Cart = cart;
@@ -74,12 +84,13 @@ public class Rail : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        Gizmos.color = Color.green;
         Gizmos.DrawLine(StartPoint, EndPoint);
         Gizmos.color = Color.green;
-        Gizmos.DrawCube(StartPoint, Cube.Vector);
-        if (NextRail == null || EndPoint != NextRail.StartPoint)
+        Gizmos.DrawCube(StartPoint, Vector3.one * 0.05f);
+        if (nextRail == null || EndPoint != nextRail.StartPoint)
             Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(EndPoint, Cube.Vector * 1.25f);
+        Gizmos.DrawWireCube(EndPoint, Vector3.one * 0.075f);
     }
 
     public static class Cube

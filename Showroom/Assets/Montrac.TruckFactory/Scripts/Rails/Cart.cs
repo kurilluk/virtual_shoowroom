@@ -43,7 +43,7 @@ public class Cart : MonoBehaviour
         if (endDistance < 0.1)
         {
             //Change next rail to currant rail by registration
-            currentRail.NextRail.AddCart(this);
+            currentRail.nextRail.AddCart(this);
         }
         else
             Debug.Log("LostCart! Distance from end point is more than trashold.");
