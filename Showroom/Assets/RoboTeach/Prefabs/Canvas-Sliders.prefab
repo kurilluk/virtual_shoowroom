@@ -99,7 +99,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 7
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -429,7 +429,7 @@ PrefabInstance:
     - target: {fileID: 1182536155264015717, guid: acba8733d4e47864a81a368100bbfb12,
         type: 3}
       propertyPath: m_Name
-      value: AxisUI (4)
+      value: AxisUI-1
       objectReference: {fileID: 0}
     - target: {fileID: 1182536155753244495, guid: acba8733d4e47864a81a368100bbfb12,
         type: 3}
@@ -629,7 +629,7 @@ PrefabInstance:
     - target: {fileID: 1182536155264015717, guid: acba8733d4e47864a81a368100bbfb12,
         type: 3}
       propertyPath: m_Name
-      value: AxisUI (3)
+      value: AxisUI-2
       objectReference: {fileID: 0}
     - target: {fileID: 1182536155753244495, guid: acba8733d4e47864a81a368100bbfb12,
         type: 3}
@@ -834,7 +834,7 @@ PrefabInstance:
     - target: {fileID: 1182536155264015717, guid: acba8733d4e47864a81a368100bbfb12,
         type: 3}
       propertyPath: m_Name
-      value: AxisUI (2)
+      value: AxisUI-3
       objectReference: {fileID: 0}
     - target: {fileID: 1182536155753244495, guid: acba8733d4e47864a81a368100bbfb12,
         type: 3}
@@ -1034,7 +1034,7 @@ PrefabInstance:
     - target: {fileID: 1182536155264015717, guid: acba8733d4e47864a81a368100bbfb12,
         type: 3}
       propertyPath: m_Name
-      value: AxisUI
+      value: AxisUI-5
       objectReference: {fileID: 0}
     - target: {fileID: 1182536155753244495, guid: acba8733d4e47864a81a368100bbfb12,
         type: 3}
@@ -1234,7 +1234,7 @@ PrefabInstance:
     - target: {fileID: 1182536155264015717, guid: acba8733d4e47864a81a368100bbfb12,
         type: 3}
       propertyPath: m_Name
-      value: AxisUI (1)
+      value: AxisUI-4
       objectReference: {fileID: 0}
     - target: {fileID: 1182536155753244495, guid: acba8733d4e47864a81a368100bbfb12,
         type: 3}
@@ -1434,7 +1434,7 @@ PrefabInstance:
     - target: {fileID: 1182536155264015717, guid: acba8733d4e47864a81a368100bbfb12,
         type: 3}
       propertyPath: m_Name
-      value: AxisUI (5)
+      value: AxisUI-Base
       objectReference: {fileID: 0}
     - target: {fileID: 1182536155753244495, guid: acba8733d4e47864a81a368100bbfb12,
         type: 3}
