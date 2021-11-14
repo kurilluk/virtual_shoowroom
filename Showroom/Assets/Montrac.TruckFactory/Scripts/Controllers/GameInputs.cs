@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/Montrac.TruckFactory/Scripts/GameInputs.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Montrac.TruckFactory/Scripts/Controllers/GameInputs.inputactions'
 
 using System;
 using System.Collections;
@@ -38,6 +38,14 @@ public class @GameInputs : IInputActionCollection, IDisposable
                     ""name"": ""Turn"",
                     ""type"": ""Button"",
                     ""id"": ""584e4cde-7aac-4a9b-a671-7b8ac3804d2e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Switch"",
+                    ""type"": ""Button"",
+                    ""id"": ""d27a44c9-5eb9-4fc6-b127-b89a54467769"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -87,6 +95,17 @@ public class @GameInputs : IInputActionCollection, IDisposable
                     ""action"": ""Turn"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d6bc7c84-65b8-4800-a42b-d0480abfb011"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Switch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -98,6 +117,7 @@ public class @GameInputs : IInputActionCollection, IDisposable
         m_Game_Initialize = m_Game.FindAction("Initialize", throwIfNotFound: true);
         m_Game_Move = m_Game.FindAction("Move", throwIfNotFound: true);
         m_Game_Turn = m_Game.FindAction("Turn", throwIfNotFound: true);
+        m_Game_Switch = m_Game.FindAction("Switch", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -150,6 +170,7 @@ public class @GameInputs : IInputActionCollection, IDisposable
     private readonly InputAction m_Game_Initialize;
     private readonly InputAction m_Game_Move;
     private readonly InputAction m_Game_Turn;
+    private readonly InputAction m_Game_Switch;
     public struct GameActions
     {
         private @GameInputs m_Wrapper;
@@ -157,6 +178,7 @@ public class @GameInputs : IInputActionCollection, IDisposable
         public InputAction @Initialize => m_Wrapper.m_Game_Initialize;
         public InputAction @Move => m_Wrapper.m_Game_Move;
         public InputAction @Turn => m_Wrapper.m_Game_Turn;
+        public InputAction @Switch => m_Wrapper.m_Game_Switch;
         public InputActionMap Get() { return m_Wrapper.m_Game; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -175,6 +197,9 @@ public class @GameInputs : IInputActionCollection, IDisposable
                 @Turn.started -= m_Wrapper.m_GameActionsCallbackInterface.OnTurn;
                 @Turn.performed -= m_Wrapper.m_GameActionsCallbackInterface.OnTurn;
                 @Turn.canceled -= m_Wrapper.m_GameActionsCallbackInterface.OnTurn;
+                @Switch.started -= m_Wrapper.m_GameActionsCallbackInterface.OnSwitch;
+                @Switch.performed -= m_Wrapper.m_GameActionsCallbackInterface.OnSwitch;
+                @Switch.canceled -= m_Wrapper.m_GameActionsCallbackInterface.OnSwitch;
             }
             m_Wrapper.m_GameActionsCallbackInterface = instance;
             if (instance != null)
@@ -188,6 +213,9 @@ public class @GameInputs : IInputActionCollection, IDisposable
                 @Turn.started += instance.OnTurn;
                 @Turn.performed += instance.OnTurn;
                 @Turn.canceled += instance.OnTurn;
+                @Switch.started += instance.OnSwitch;
+                @Switch.performed += instance.OnSwitch;
+                @Switch.canceled += instance.OnSwitch;
             }
         }
     }
@@ -197,5 +225,6 @@ public class @GameInputs : IInputActionCollection, IDisposable
         void OnInitialize(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
         void OnTurn(InputAction.CallbackContext context);
+        void OnSwitch(InputAction.CallbackContext context);
     }
 }

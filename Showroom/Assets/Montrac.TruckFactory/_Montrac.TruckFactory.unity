@@ -1291,9 +1291,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9f57268068d5744b840a3fa018f4618, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pfCart: {fileID: 2536668099072596411, guid: afcf31b31b62d6942b40a7f1017be3b7, type: 3}
   dynamicLayer: {fileID: 1048003486}
   initRail: {fileID: 1030585736}
+  pf_Cart: {fileID: 2536668099072596411, guid: afcf31b31b62d6942b40a7f1017be3b7, type: 3}
+  in_Rail: {fileID: 254329569}
 --- !u!1 &811182830
 GameObject:
   m_ObjectHideFlags: 0

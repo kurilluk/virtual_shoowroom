@@ -7,14 +7,16 @@ using UnityEngine.InputSystem.Controls;
 
 public class GameHandler : MonoBehaviour
 {
-    public Transform pfCart;
+    private GameInputs _inputs;
     public Transform dynamicLayer;  // TODO: Create on run/if doesn't exist
 
     public Rail initRail;
 
-    private GameInputs _inputs;
-    private Transform cart;
-    private Cart cart_class;
+    public Transform pf_Cart; // Prefab
+    private Transform in_Cart; // Instance object
+    private Cart cm_Cart; // Component from instance
+
+    public Transform in_Rail;
 
     private void Awake()
     {
@@ -22,24 +24,31 @@ public class GameHandler : MonoBehaviour
         _inputs.Game.Enable();
         _inputs.Game.Initialize.started += InitializeCart;
         _inputs.Game.Move.started += MoveCart;
-        //_inputs.Cart.Move.Disable();
+        _inputs.Game.Switch.started += RotateSwitch;
+    }
 
+    private void RotateSwitch(InputAction.CallbackContext obj)
+    {
+        if (!in_Rail)
+            return;
+        var cm_SA = in_Rail.GetChild(0).GetComponent<SwitchAnimator>();
+        cm_SA.Rotate();
     }
 
     private void MoveCart(InputAction.CallbackContext context)
     {
-        if (!cart)
+        if (!in_Cart)
             return;
         Debug.Log(context);
-        //cart_class.Move(((int)((KeyControl)context.control).keyCode) != 63);
-        cart_class.Move();
+        //cm_Cart.Move(((int)((KeyControl)context.control).keyCode) != 63);
+        cm_Cart.Move();
     }
 
     private void InitializeCart(InputAction.CallbackContext obj)
     {
-        cart = Instantiate(pfCart, initRail.StartPoint, Quaternion.identity, dynamicLayer);
-        cart_class = cart.GetComponent<Cart>();
-        initRail.AddCart(cart_class);
+        in_Cart = Instantiate(pf_Cart, initRail.StartPoint, Quaternion.identity, dynamicLayer);
+        cm_Cart = in_Cart.GetComponent<Cart>();
+        initRail.AddCart(cm_Cart);
         //_inputs.Cart.Move.Enable();
     }
 
@@ -48,12 +57,12 @@ public class GameHandler : MonoBehaviour
     {
         Application.targetFrameRate = 60;
         print(Screen.currentResolution);
-        //Transform cart = Instantiate(pfCart, new Vector3(1.2f, 0.85f, -4), Quaternion.identity);
+        //Transform in_Cart = Instantiate(pf_Cart, new Vector3(1.2f, 0.85f, -4), Quaternion.identity);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
