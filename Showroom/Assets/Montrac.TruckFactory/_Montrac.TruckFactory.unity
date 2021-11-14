@@ -1292,7 +1292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pfCart: {fileID: 2536668099072596411, guid: afcf31b31b62d6942b40a7f1017be3b7, type: 3}
-  dynamicLayer: {fileID: 0}
+  dynamicLayer: {fileID: 1048003486}
   initRail: {fileID: 1030585736}
 --- !u!1 &811182830
 GameObject:
@@ -1965,7 +1965,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1403894537
 Transform:
   m_ObjectHideFlags: 0
@@ -3250,7 +3250,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -3291,8 +3291,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
+  near clip plane: 0.1
+  far clip plane: 50
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -4145,6 +4145,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 0d4a076b45703aa4dbbf7774e5011ed5, type: 2}
+    - target: {fileID: 6983055222054822657, guid: afcf31b31b62d6942b40a7f1017be3b7,
+        type: 3}
+      propertyPath: m_UpdateMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6983055222054822657, guid: afcf31b31b62d6942b40a7f1017be3b7,
         type: 3}
       propertyPath: m_ApplyRootMotion
