@@ -8,19 +8,24 @@ public class Cart : MonoBehaviour
     public Rail currentRail;
 
     Animator _anim;
-    int up_110 = Animator.StringToHash("Move_110");
 
     private void Awake()
     {
         _anim = GetComponent<Animator>();
     }
 
+    public void Move(int anim)
+    {
+        // TODO: Check if exist
+        _anim.Play(anim);
+    }
+
     public void Move(bool turn)//Vector3 position)
     {
         if (turn)
-            _anim.Play("Turn_left");
+            _anim.Play(Movement.TR_Left);
         else
-            _anim.Play(up_110);
+            _anim.Play(Movement.FW_110);
 
         //StartCoroutine(MoveCart());
 
@@ -39,16 +44,25 @@ public class Cart : MonoBehaviour
         //Check distance from rail end point
         var endDistance = Vector3.Distance(transform.position, currentRail.EndPoint);
         Debug.Log("Distance:" + endDistance);
-        
+
         if (endDistance < 0.1)
         {
             //Change next rail to currant rail by registration
             currentRail.NextRail.AddCart(this);
+            if (!currentRail.isInteractive)
+                Move();
         }
         else
             Debug.Log("LostCart! Distance from end point is more than trashold.");
 
 
+    }
+
+    public static class Movement
+    {
+        public static int FW_110 = Animator.StringToHash("FW_110");
+        public static int FW_Switch = Animator.StringToHash("FW_Switch");
+        public static int TR_Left = Animator.StringToHash("TR_Left");
     }
 
     //IEnumerator RunAnimation(int anim)
@@ -103,27 +117,27 @@ public class Cart : MonoBehaviour
     //    Debug.Log("Collision entered");
     //}
 
-    private void OnTriggerStay(Collider other)
-    {
-        Debug.Log("Still here");
-    }
+    // private void OnTriggerStay(Collider other)
+    // {
+    //     Debug.Log("Still here");
+    // }
 
 
-    private void OnTriggerExit(Collider other)
-    {
-        Debug.Log("Exit from collision");
-    }
+    // private void OnTriggerExit(Collider other)
+    // {
+    //     Debug.Log("Exit from collision");
+    // }
 
-    //private IEnumerator OnTriggerEnter(Collider collision)
-    //{
-    //    /// Actualize data - position/possibilities/...
-    //    /// Wait for input
-    //    Debug.Log("Collision entered: " + collision);
-    //    yield return null;
-    //}
+    // //private IEnumerator OnTriggerEnter(Collider collision)
+    // //{
+    // //    /// Actualize data - position/possibilities/...
+    // //    /// Wait for input
+    // //    Debug.Log("Collision entered: " + collision);
+    // //    yield return null;
+    // //}
 
-    private void OnTriggerEnter(Collider other)
-    {
+    // private void OnTriggerEnter(Collider other)
+    // {
 
-    }
+    // }
 }

@@ -49,6 +49,13 @@ public class Rail : MonoBehaviour
             UnityEditor.SceneView.RepaintAll();
         }
     }
+
+    public bool isInteractive = false;
+
+    public virtual void Interaction()
+    {
+        Debug.Log("Sorry, nothing to do here.");
+    }
     #endregion
 
     #region CART
@@ -60,9 +67,8 @@ public class Rail : MonoBehaviour
         cart.currentRail = this;
     }
 
-    private int _possible_movement = Animator.StringToHash("Move_110");
-
-    public int Movement
+    private int _possible_movement = Cart.Movement.FW_110;
+    public virtual int Movement
     {
         get { return _possible_movement; }
         private set { _possible_movement = value; }

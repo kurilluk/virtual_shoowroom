@@ -29,10 +29,26 @@ public class GameHandler : MonoBehaviour
 
     private void RotateSwitch(InputAction.CallbackContext obj)
     {
-        if (!in_Rail)
+        // if (!in_Rail)
+        //     return;
+        // var cm_SA = in_Rail.GetChild(0).GetComponent<SwitchAnimator>();
+        // cm_SA.Rotate();
+
+        if (cm_Cart == null)
+        {
+            Debug.Log("No Cart instance is in the game yet.");
             return;
-        var cm_SA = in_Rail.GetChild(0).GetComponent<SwitchAnimator>();
-        cm_SA.Rotate();
+        }
+        if (!cm_Cart.currentRail.isInteractive)
+        {
+            Debug.Log("No interactions with current rail are possible. Please move forward if possible.");
+            return;
+        }
+
+        cm_Cart.currentRail.Interaction();
+
+
+
     }
 
     private void MoveCart(InputAction.CallbackContext context)
@@ -41,7 +57,8 @@ public class GameHandler : MonoBehaviour
             return;
         Debug.Log(context);
         //cm_Cart.Move(((int)((KeyControl)context.control).keyCode) != 63);
-        cm_Cart.Move();
+        //cm_Cart.Move();
+        cm_Cart.Move(cm_Cart.currentRail.Movement);
     }
 
     private void InitializeCart(InputAction.CallbackContext obj)

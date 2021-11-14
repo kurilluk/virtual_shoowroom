@@ -127,10 +127,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da74aa5d8380fb9469a0167bf01c1e07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _possible_movement: 1890485749
   Direction: {x: 0, y: 0, z: 1}
   _nextRail: {fileID: 0}
+  isInteractive: 1
   Cart: {fileID: 0}
+  A_state: 0
+  B_state: -120
+  _function:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.30007994
+      value: 0.12931873
+      inSlope: 1.2472612
+      outSlope: 1.2472612
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.69809216
+      value: 0.8482881
+      inSlope: 1.4575987
+      outSlope: 1.4575987
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!33 &1859839740129978684
 MeshFilter:
   m_ObjectHideFlags: 0
