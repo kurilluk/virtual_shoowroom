@@ -18,7 +18,7 @@ public class Cart : MonoBehaviour
     public void Move(bool turn)//Vector3 position)
     {
         if (turn)
-            _anim.Play("Turn_left");
+            _anim.Play("TR_Left");
         else
             _anim.Play(up_110);
 
@@ -39,7 +39,7 @@ public class Cart : MonoBehaviour
         //Check distance from rail end point
         var endDistance = Vector3.Distance(transform.position, currentRail.EndPoint);
         Debug.Log("Distance:" + endDistance);
-        
+
         if (endDistance < 0.1)
         {
             //Change next rail to currant rail by registration
