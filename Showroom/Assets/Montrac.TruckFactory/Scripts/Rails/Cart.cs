@@ -43,14 +43,18 @@ public class Cart : MonoBehaviour
     {
         //Check distance from rail end point
         var endDistance = Vector3.Distance(transform.position, currentRail.EndPoint);
-        Debug.Log("Distance:" + endDistance);
+        //Debug.Log("Distance:" + endDistance);
 
         if (endDistance < 0.1)
         {
             //Change next rail to currant rail by registration
             currentRail.NextRail.AddCart(this);
+            print("Perfect, your Cart is moved on a new poition. You can interact with the new "+ currentRail.transform.name +" now.");
             if (!currentRail.isInteractive)
+            {
+                print("There are no interaction on this rail, therefore I am moving you futher.");
                 Move();
+            }
         }
         else
             Debug.Log("LostCart! Distance from end point is more than trashold.");

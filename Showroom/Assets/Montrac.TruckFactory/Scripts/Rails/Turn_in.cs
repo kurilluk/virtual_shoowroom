@@ -43,7 +43,9 @@ public class Turn_in : Rail
         else
             Debug.Log("No Child switch found for object: " + transform.name);
 
-        print("Movement set to:" + Movement);
+        //print("Movement set to:" + Movement);
+        string status = _switch ? "ON" : "OFF" ;
+        print("Turnout was switch " + status + ". Next motion is "+ Movement + ". To move press UP key.");
 
     }
 

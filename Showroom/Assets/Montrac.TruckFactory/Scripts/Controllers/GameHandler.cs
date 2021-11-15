@@ -36,12 +36,12 @@ public class GameHandler : MonoBehaviour
 
         if (cm_Cart == null)
         {
-            Debug.Log("No Cart instance is in the game yet.");
+            Debug.Log("No Cart instance is in the game yet. Press SPACE key to create one.");
             return;
         }
         if (!cm_Cart.currentRail.isInteractive)
         {
-            Debug.Log("No interactions with current rail are possible. Please move forward if possible.");
+            Debug.Log("No interactions with current rail are possible. Please move forward by pressing UP ARROW key.");
             return;
         }
 
@@ -54,15 +54,21 @@ public class GameHandler : MonoBehaviour
     private void MoveCart(InputAction.CallbackContext context)
     {
         if (!in_Cart)
+        {
+            Debug.Log("No Cart instance is in the game yet. Press SPACE key to create one.");
             return;
-        Debug.Log(context);
+        }
+            
+        //Debug.Log(context);
         //cm_Cart.Move(((int)((KeyControl)context.control).keyCode) != 63);
         //cm_Cart.Move();
+        print("I'm coming!");
         cm_Cart.Move(cm_Cart.currentRail.Movement);
     }
 
     private void InitializeCart(InputAction.CallbackContext obj)
     {
+        print("Great! You created your first Cart. Now you can control it with S and UP keys.");
         in_Cart = Instantiate(pf_Cart, initRail.StartPoint, Quaternion.identity, dynamicLayer);
         cm_Cart = in_Cart.GetComponent<Cart>();
         initRail.AddCart(cm_Cart);
@@ -73,7 +79,8 @@ public class GameHandler : MonoBehaviour
     void Start()
     {
         Application.targetFrameRate = 60;
-        print(Screen.currentResolution);
+        //print(Screen.currentResolution);
+        print("Hi, welcome in the game mode. Here you can control a Cart and Rails by pressing UP ARROW (movement) and S (interaction) keys.");
         //Transform in_Cart = Instantiate(pf_Cart, new Vector3(1.2f, 0.85f, -4), Quaternion.identity);
     }
 
