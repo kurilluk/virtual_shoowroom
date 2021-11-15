@@ -5,18 +5,20 @@ using UnityEditor;
 [CanEditMultipleObjects]
 public class Rail_Editor : Editor
 {
+    private SerializedObject m_Target;
     //SerializedProperty StartPoint;
     //SerializedProperty Direction;
     //SerializedProperty EndPoint;
-    SerializedProperty nextRail;
+    private SerializedProperty m_NextRail;
 
     void OnEnable()
     {
+        m_Target = new SerializedObject(target);
         // Fetch the objects from the GameObject script to display in the inspector
         //StartPoint = serializedObject.FindProperty("StartPoint");
         //Direction = serializedObject.FindProperty("Direction");
         //EndPoint = serializedObject.FindProperty("EndPoint");
-        nextRail = serializedObject.FindProperty("nextRail");
+        m_NextRail = serializedObject.FindProperty("nextRail");
     }
     public override void OnInspectorGUI()
     {
@@ -25,8 +27,8 @@ public class Rail_Editor : Editor
 
         //GUILayout.Label("Topology", EditorStyles.boldLabel, GUILayout.Height(20));
 
-        EditorGUILayout.PropertyField(nextRail);
-        //rail.nextRail = (Rail)EditorGUILayout.ObjectField("Next Rail", rail.nextRail, typeof(Rail), true);
+        EditorGUILayout.PropertyField(m_NextRail);
+        //rail.m_NextRail = (Rail)EditorGUILayout.ObjectField("Next Rail", rail.m_NextRail, typeof(Rail), true);
 
         //GUILayout.Label("Geometry", EditorStyles.boldLabel);
 

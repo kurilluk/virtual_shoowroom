@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/Montrac.TruckFactory/Scripts/GameInputs.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Montrac.TruckFactory/Scripts/Controllers/GameInputs.inputactions'
 
 using System;
 using System.Collections;
