@@ -36,6 +36,9 @@ public class SliderMoveJ : MonoBehaviour
 
     public void Start()
     {
+        slider0.value = robotArm0.rotation.y;
+        slider1.value = robotArm1.rotation.z;
+        print("Robot arm0 rotation y: "+slider0.value);
         //Adds a listener to the main slider and invokes a method when the value changes.
         slider0.onValueChanged.AddListener(delegate { CheckSlider0(); });
         slider1.onValueChanged.AddListener(delegate { CheckSlider1(); });
@@ -47,7 +50,7 @@ public class SliderMoveJ : MonoBehaviour
         Debug.Log(slider0.value);
         float sliderValue;
         sliderValue = slider0.value;
-        sliderValue = Remap(sliderValue, 0, 1, rotMin, rotMax);
+        //sliderValue = Remap(sliderValue, 0, 1, rotMin, rotMax);
         Debug.Log(sliderValue);
         RotateArm0(sliderValue);
     }
@@ -57,7 +60,7 @@ public class SliderMoveJ : MonoBehaviour
         Debug.Log(slider1.value);
         float sliderValue;
         sliderValue = slider1.value;
-        sliderValue = Remap(sliderValue, 0, 1, rotMin, rotMax);
+        //sliderValue = Remap(sliderValue, 0, 1, rotMin, rotMax);
         Debug.Log(sliderValue);
         RotateArm1(sliderValue);
     }
@@ -117,15 +120,18 @@ public class SliderMoveJ : MonoBehaviour
         {
             case 0:
                 //currentArm.Rotate(rot, 0f, 0f, Space.Self); 
-                currentArm.SetPositionAndRotation(currentArm.position, Quaternion.Euler(new Vector3(rot, 0f, 0f)));
+                //currentArm.SetPositionAndRotation(currentArm.position, Quaternion.Euler(rot, 0f, 0f));
+                currentArm.rotation = Quaternion.Euler(rot, 0f, 0f);
                 break;
             case 1:
                 //currentArm.Rotate(0f, rot, 0f, Space.Self);
-                currentArm.SetPositionAndRotation(currentArm.position, Quaternion.Euler(new Vector3(0f, rot, 0f)));
+                //currentArm.SetPositionAndRotation(currentArm.position, Quaternion.Euler(0f, rot, 0f));
+                currentArm.rotation = Quaternion.Euler(0f, rot, 0f);
                 break;
             case 2:
                 //currentArm.Rotate(0f, 0f, rot, Space.Self);
-                currentArm.SetPositionAndRotation(currentArm.position, Quaternion.Euler(new Vector3(0f, 0f, rot)));
+                //currentArm.SetPositionAndRotation(currentArm.position, Quaternion.Euler(new Vector3(0f, 0f, rot)));
+                currentArm.rotation = Quaternion.Euler(0f, 0f, rot);
                 break;
             default:
                 break;
