@@ -31,14 +31,15 @@ public class SliderMoveJ : MonoBehaviour
     public Slider slider4;
     public Slider slider5;
 
-    public float rotMin = -180;
-    public float rotMax = 180;
+    //public float rotMin = -180;
+    //public float rotMax = 180;
 
     public void Start()
     {
         slider0.value = robotArm0.rotation.y;
         slider1.value = robotArm1.rotation.z;
-        print("Robot arm0 rotation y: "+slider0.value);
+        print("Robot arm0 rotation y: " + slider0.value);
+        print("Robot arm1 rotation y: " + slider1.value);
         //Adds a listener to the main slider and invokes a method when the value changes.
         slider0.onValueChanged.AddListener(delegate { CheckSlider0(); });
         slider1.onValueChanged.AddListener(delegate { CheckSlider1(); });
