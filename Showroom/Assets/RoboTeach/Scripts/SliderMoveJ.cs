@@ -120,19 +120,19 @@ public class SliderMoveJ : MonoBehaviour
         switch (whichAxis)
         {
             case 0:
-                //currentArm.Rotate(rot, 0f, 0f, Space.Self); 
+                currentArm.Rotate(rot, 0f, 0f, Space.Self); 
                 //currentArm.SetPositionAndRotation(currentArm.position, Quaternion.Euler(rot, 0f, 0f));
-                currentArm.rotation = Quaternion.Euler(rot, 0f, 0f);
+                //currentArm.rotation = Quaternion.Euler(rot, 0f, 0f);
                 break;
             case 1:
-                //currentArm.Rotate(0f, rot, 0f, Space.Self);
+                currentArm.Rotate(0f, rot, 0f, Space.Self);
                 //currentArm.SetPositionAndRotation(currentArm.position, Quaternion.Euler(0f, rot, 0f));
-                currentArm.rotation = Quaternion.Euler(0f, rot, 0f);
+                //currentArm.rotation = Quaternion.Euler(0f, rot, 0f);
                 break;
             case 2:
-                //currentArm.Rotate(0f, 0f, rot, Space.Self);
+                currentArm.Rotate(0f, 0f, rot, Space.Self);
                 //currentArm.SetPositionAndRotation(currentArm.position, Quaternion.Euler(new Vector3(0f, 0f, rot)));
-                currentArm.rotation = Quaternion.Euler(0f, 0f, rot);
+                //currentArm.rotation = Quaternion.Euler(0f, 0f, rot);
                 break;
             default:
                 break;
