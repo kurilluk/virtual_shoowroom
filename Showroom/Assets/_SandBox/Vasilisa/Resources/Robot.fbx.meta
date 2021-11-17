@@ -27,9 +27,64 @@ ModelImporter:
   - first:
       74: -6139840412702788442
     second: wait
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: J1Output_MAT3
+    second: {fileID: 2100000, guid: d0008670f09889f499c330c49ce3f088, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: J2Output_MAT3
+    second: {fileID: 2100000, guid: 103f0491ba3c2524a9eb32764af7dbe2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: J3Output_MAT3
+    second: {fileID: 2100000, guid: 103f0491ba3c2524a9eb32764af7dbe2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: J4Output_MAT3
+    second: {fileID: 2100000, guid: 103f0491ba3c2524a9eb32764af7dbe2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: J5Output_MAT3
+    second: {fileID: 2100000, guid: 103f0491ba3c2524a9eb32764af7dbe2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: J6Output_MAT3
+    second: {fileID: 2100000, guid: 103f0491ba3c2524a9eb32764af7dbe2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: KUKA_MAT3
+    second: {fileID: 2100000, guid: 103f0491ba3c2524a9eb32764af7dbe2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: e83adeb2070368445b2f6551006c7077, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert4
+    second: {fileID: 2100000, guid: d0008670f09889f499c330c49ce3f088, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: limitBar_MAT3
+    second: {fileID: 2100000, guid: e83adeb2070368445b2f6551006c7077, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: limitMeter_MAT3
+    second: {fileID: 2100000, guid: e83adeb2070368445b2f6551006c7077, type: 2}
   materials:
-    materialImportMode: 0
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
