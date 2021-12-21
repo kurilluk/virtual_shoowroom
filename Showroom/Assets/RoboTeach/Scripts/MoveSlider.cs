@@ -11,12 +11,14 @@ public class MoveSlider : MonoBehaviour
     public Button buttonPlus;
     public float sliderStep = 5f;
 
-    public TextMeshPro sliderText;
+    public TextMeshProUGUI sliderText;
 
     // Start is called before the first frame update
     void Start()
     {
-        sliderText = FindObjectOfType<TextMeshPro>();
+        //string name = sliderText.text;
+        //sliderText = FindObjectOfType<TextMeshProUGUI>();
+        slider.onValueChanged.AddListener(delegate { DisplaySliderText(); });
 
         buttonMinus.onClick.AddListener(delegate { DecreaseSlider(); });
         buttonPlus.onClick.AddListener(delegate { IncreaseSlider(); });
@@ -29,5 +31,11 @@ public class MoveSlider : MonoBehaviour
     void IncreaseSlider() 
     {
         slider.value += sliderStep;
+    }
+    void DisplaySliderText() 
+    {
+        
+        string text = Mathf.Round(slider.value).ToString();
+        sliderText.text = text;
     }
 }
