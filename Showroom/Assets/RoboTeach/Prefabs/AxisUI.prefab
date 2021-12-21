@@ -935,7 +935,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1182536155981040622}
   - component: {fileID: 1182536155981040623}
-  - component: {fileID: 7541587966794548966}
+  - component: {fileID: 6936302160399563657}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -1016,7 +1016,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &7541587966794548966
+--- !u!114 &6936302160399563657
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1029,9 +1029,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1182536155981040623}
-  buttonBack: {fileID: 1182536155753244492}
-  buttonForward: {fileID: 1182536155106043361}
+  buttonMinus: {fileID: 1182536155753244492}
+  buttonPlus: {fileID: 1182536155106043361}
   sliderStep: 5
+  sliderText: {fileID: 0}
 --- !u!1 &6174845656324798574
 GameObject:
   m_ObjectHideFlags: 0
