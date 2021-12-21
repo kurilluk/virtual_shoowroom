@@ -6,6 +6,7 @@ public class ShowUI : MonoBehaviour
 
 {
     public GameObject go;
+
     // Start is called before the first frame update
     void Start()
     {
