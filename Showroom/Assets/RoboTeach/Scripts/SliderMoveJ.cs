@@ -38,34 +38,76 @@ public class SliderMoveJ : MonoBehaviour
     {
         slider0.value = robotArm0.rotation.y;
         slider1.value = robotArm1.rotation.z;
-        print("Robot arm0 rotation y: " + slider0.value);
-        print("Robot arm1 rotation y: " + slider1.value);
+        slider2.value = robotArm2.rotation.z;
+        slider3.value = robotArm3.rotation.x;
+        slider4.value = robotArm4.rotation.z;
+        slider5.value = robotArm5.rotation.x;
+        //print("Robot arm0 rotation y: " + slider0.value);
+        //print("Robot arm1 rotation y: " + slider1.value);
         //Adds a listener to the main slider and invokes a method when the value changes.
         slider0.onValueChanged.AddListener(delegate { CheckSlider0(); });
         slider1.onValueChanged.AddListener(delegate { CheckSlider1(); });
+        slider2.onValueChanged.AddListener(delegate { CheckSlider2(); });
+        slider3.onValueChanged.AddListener(delegate { CheckSlider3(); });
+        slider4.onValueChanged.AddListener(delegate { CheckSlider4(); });
+        slider5.onValueChanged.AddListener(delegate { CheckSlider5(); });
     }
 
     // Invoked when the value of the slider changes.
     public void CheckSlider0()
     {
-        Debug.Log(slider0.value);
+        //Debug.Log(slider0.value);
         float sliderValue;
         sliderValue = slider0.value;
         //sliderValue = Remap(sliderValue, 0, 1, rotMin, rotMax);
-        Debug.Log(sliderValue);
+        //Debug.Log(sliderValue);
         RotateArm0(sliderValue);
     }
-
     public void CheckSlider1()
     {
-        Debug.Log(slider1.value);
+        //Debug.Log(slider1.value);
         float sliderValue;
         sliderValue = slider1.value;
         //sliderValue = Remap(sliderValue, 0, 1, rotMin, rotMax);
-        Debug.Log(sliderValue);
+        //Debug.Log(sliderValue);
         RotateArm1(sliderValue);
     }
-
+    public void CheckSlider2()
+    {
+        //Debug.Log(slider1.value);
+        float sliderValue;
+        sliderValue = slider2.value;
+        //sliderValue = Remap(sliderValue, 0, 1, rotMin, rotMax);
+        //Debug.Log(sliderValue);
+        RotateArm2(sliderValue);
+    }
+    public void CheckSlider3()
+    {
+        //Debug.Log(slider1.value);
+        float sliderValue;
+        sliderValue = slider3.value;
+        //sliderValue = Remap(sliderValue, 0, 1, rotMin, rotMax);
+        //Debug.Log(sliderValue);
+        RotateArm3(sliderValue);
+    }
+    public void CheckSlider4()
+    {
+        //Debug.Log(slider1.value);
+        float sliderValue;
+        sliderValue = slider4.value;
+        //sliderValue = Remap(sliderValue, 0, 1, rotMin, rotMax);
+        //Debug.Log(sliderValue);
+        RotateArm4(sliderValue);
+    }
+    public void CheckSlider5()
+    {
+        //Debug.Log(slider1.value);
+        float sliderValue;
+        sliderValue = slider5.value;
+        //sliderValue = Remap(sliderValue, 0, 1, rotMin, rotMax);
+        //Debug.Log(sliderValue);
+        RotateArm5(sliderValue);
+    }
 
     public float Remap(float from, float fromMin, float fromMax, float toMin, float toMax)
     {
@@ -116,21 +158,24 @@ public class SliderMoveJ : MonoBehaviour
     {
         //float rot = rotAmount * rotationSpeed * Time.deltaTime;
         float rot = rotAmount * rotationSpeed;
-        //Debug.Log(rot);
+        Debug.Log("Arm rotatied this much: " + rot);
         switch (whichAxis)
         {
             case 0:
-                currentArm.Rotate(rot, 0f, 0f, Space.Self); 
+                //currentArm.Rotate(rot, 0f, 0f, Space.Self);
+                currentArm.transform.localEulerAngles = new Vector3(rot, 0, 0);
                 //currentArm.SetPositionAndRotation(currentArm.position, Quaternion.Euler(rot, 0f, 0f));
                 //currentArm.rotation = Quaternion.Euler(rot, 0f, 0f);
                 break;
             case 1:
-                currentArm.Rotate(0f, rot, 0f, Space.Self);
+                //currentArm.Rotate(0f, rot, 0f, Space.Self);
+                currentArm.transform.localEulerAngles = new Vector3(0, rot, 0);
                 //currentArm.SetPositionAndRotation(currentArm.position, Quaternion.Euler(0f, rot, 0f));
                 //currentArm.rotation = Quaternion.Euler(0f, rot, 0f);
                 break;
             case 2:
-                currentArm.Rotate(0f, 0f, rot, Space.Self);
+                //currentArm.Rotate(0f, 0f, rot, Space.Self);
+                currentArm.transform.localEulerAngles = new Vector3(0, 0, rot);
                 //currentArm.SetPositionAndRotation(currentArm.position, Quaternion.Euler(new Vector3(0f, 0f, rot)));
                 //currentArm.rotation = Quaternion.Euler(0f, 0f, rot);
                 break;
