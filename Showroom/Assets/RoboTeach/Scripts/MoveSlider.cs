@@ -7,6 +7,8 @@ using TMPro;
 public class MoveSlider : MonoBehaviour
 {
     public Slider slider;
+    public Button resetButton;
+    public float initialValue;
     public Button buttonMinus;
     public Button buttonPlus;
     public float sliderStep = 5f;
@@ -19,6 +21,8 @@ public class MoveSlider : MonoBehaviour
         //string name = sliderText.text;
         //sliderText = FindObjectOfType<TextMeshProUGUI>();
         slider.onValueChanged.AddListener(delegate { DisplaySliderText(); });
+
+        //resetButton.onClick.AddListener(delegate { ResetSliders(); });
 
         buttonMinus.onClick.AddListener(delegate { DecreaseSlider(); });
         buttonPlus.onClick.AddListener(delegate { IncreaseSlider(); });
@@ -34,8 +38,11 @@ public class MoveSlider : MonoBehaviour
     }
     void DisplaySliderText() 
     {
-        
         string text = Mathf.Round(slider.value).ToString();
         sliderText.text = text;
+    }
+    void ResetSliders() 
+    {
+        slider.value = initialValue;    
     }
 }
