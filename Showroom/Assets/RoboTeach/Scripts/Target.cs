@@ -40,19 +40,28 @@ public class Target : MonoBehaviour
     {
         Debug.Log("Target just got Enabled.");
         targetGO.SetActive(true);
-        StartCoroutine(AnimateMe(1f));
+        StartCoroutine(Grow());
     }
 
-    IEnumerator AnimateMe(float desiredScale) 
+    IEnumerator Grow() 
     {
         for (float f = 0; f<=1; f+=0.05f ) 
         {
-            Debug.Log("Animation frame: "+ f.ToString());
-            targetGO.transform.localScale = new Vector3(1f,1f,1f) * desiredScale * f;
+            StopCoroutine(Shrink());
+            Debug.Log("Growing animation frame: "+ f.ToString());
+            targetGO.transform.localScale = new Vector3(1f,1f,1f) * f;
             yield return new WaitForSeconds(0.05f);
         }
-
-        //yield return null;
+    }
+    IEnumerator Shrink()
+    {
+        StopCoroutine(Grow());
+        for (float f = 1; f >= 0.0001; f -= 0.05f)
+        {
+            Debug.Log("Shrinking animation frame: " + f.ToString());
+            targetGO.transform.localScale = new Vector3(1f, 1f, 1f) * f;
+            yield return new WaitForSeconds(0.05f);
+        }
     }
 
     private void MoveMe(Vector3 moveHere) 
@@ -64,7 +73,8 @@ public class Target : MonoBehaviour
 
     private void TargetHit() 
     {
-        AnimateMe(0.001f);
+        StopCoroutine(Grow());
+        StartCoroutine(Shrink());
     }
 
     private void OnTriggerEnter(Collider other)
