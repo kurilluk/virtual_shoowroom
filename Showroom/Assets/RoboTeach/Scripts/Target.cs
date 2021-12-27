@@ -27,7 +27,7 @@ public class Target : MonoBehaviour
         Debug.Log("Initialized the Target.");
         levelPositions = positions;
         ResetIndex();
-        MoveMe(levelPositions[0]);
+        //MoveMe(levelPositions[0]);
     }
 
     private void ResetIndex() 
@@ -45,7 +45,7 @@ public class Target : MonoBehaviour
 
     IEnumerator AnimateMe(float desiredScale) 
     {
-        for (float f = 0; f<=1; f+=0.1f ) 
+        for (float f = 0; f<=1; f+=0.05f ) 
         {
             Debug.Log("Animation frame: "+ f.ToString());
             targetGO.transform.localScale = new Vector3(1f,1f,1f) * desiredScale * f;
@@ -75,6 +75,7 @@ public class Target : MonoBehaviour
         if (acturalTargetIndex >= levelPositions.Length)
         {
             VictoryEvent.Invoke();
+            Debug.Log("You've won!");
             ResetIndex();
         }
         else 
