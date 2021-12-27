@@ -24,18 +24,21 @@ public class Target : MonoBehaviour
 
     public void InitializeMe(Vector3[] positions) 
     {
+        Debug.Log("Initialized the Target.");
         levelPositions = positions;
         ResetIndex();
-        MoveMe(levelPositions[acturalTargetIndex]);
+        MoveMe(levelPositions[0]);
     }
 
     private void ResetIndex() 
     {
+        Debug.Log("The Index has been reset.");
         acturalTargetIndex = 0;
     }
 
     private void EnableMe() 
     {
+        Debug.Log("Target just got Enabled.");
         targetGO.SetActive(true);
         StartCoroutine(AnimateMe(1f));
     }
@@ -44,6 +47,7 @@ public class Target : MonoBehaviour
     {
         for (float f = 0; f<=1; f+=0.1f ) 
         {
+            Debug.Log("Animation frame: "+ f.ToString());
             targetGO.transform.localScale = new Vector3(1f,1f,1f) * desiredScale * f;
             yield return new WaitForSeconds(0.1f);
         }
@@ -53,6 +57,7 @@ public class Target : MonoBehaviour
 
     private void MoveMe(Vector3 moveHere) 
     {
+        Debug.Log("Target moved to a new position: " + moveHere.ToString());
         this.transform.position = moveHere;
         // TODO: Add animation 
     }
