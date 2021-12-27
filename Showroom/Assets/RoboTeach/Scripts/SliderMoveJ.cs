@@ -127,7 +127,7 @@ public class SliderMoveJ : MonoBehaviour
     {
         //float rot = rotAmount * rotationSpeed * Time.deltaTime;
         float rot = rotAmount * rotationSpeed;
-        Debug.Log("Arm rotatied this much: " + rot);
+        //Debug.Log("Arm rotatied this much: " + rot);
         switch (whichAxis)
         {
             case 0:

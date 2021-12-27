@@ -27,7 +27,7 @@ public class Target : MonoBehaviour
         Debug.Log("Initialized the Target.");
         levelPositions = positions;
         ResetIndex();
-        //MoveMe(levelPositions[0]);
+        MoveMe(levelPositions[0]);
     }
 
     private void ResetIndex() 
@@ -49,7 +49,7 @@ public class Target : MonoBehaviour
         {
             Debug.Log("Animation frame: "+ f.ToString());
             targetGO.transform.localScale = new Vector3(1f,1f,1f) * desiredScale * f;
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.05f);
         }
 
         //yield return null;
@@ -67,7 +67,7 @@ public class Target : MonoBehaviour
         AnimateMe(0.001f);
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         Debug.Log("You've hit the target!");
         TargetHit();
