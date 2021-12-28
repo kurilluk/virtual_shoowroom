@@ -10,9 +10,11 @@ public class Target : MonoBehaviour
     [SerializeField] UnityEvent ScoreTeller;
 
     public Vector3[] levelPositions;
-    private int acturalTargetIndex = 0;
+    public int acturalTargetIndex = 0;
 
     public GameObject targetGO;
+
+    public Action ShowScore;
 
     private void Awake()
     {
@@ -57,7 +59,7 @@ public class Target : MonoBehaviour
     IEnumerator Shrink()
     {
         StopCoroutine(Grow());
-        for (float f = 1; f >= 0.0001; f -= 0.05f)
+        for (float f = 1; f >= 0.000001; f -= 0.05f)
         {
             Debug.Log("Shrinking animation frame: " + f.ToString());
             targetGO.transform.localScale = new Vector3(1f, 1f, 1f) * f;
@@ -76,6 +78,8 @@ public class Target : MonoBehaviour
     {
         StopCoroutine(Grow());
         StartCoroutine(Shrink());
+        ScoreTeller.Invoke();
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -93,6 +97,7 @@ public class Target : MonoBehaviour
         {
             MoveMe(levelPositions[acturalTargetIndex]);
             EnableMe();
+            
         }
     }
 }
