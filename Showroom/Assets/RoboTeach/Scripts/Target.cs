@@ -7,6 +7,7 @@ using System;
 public class Target : MonoBehaviour
 {
     [SerializeField] UnityEvent VictoryEvent;
+    [SerializeField] UnityEvent ScoreTeller;
 
     public Vector3[] levelPositions;
     private int acturalTargetIndex = 0;
