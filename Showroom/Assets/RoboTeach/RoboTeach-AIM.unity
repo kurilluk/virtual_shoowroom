@@ -577,7 +577,7 @@ GameObject:
   - component: {fileID: 1187537257}
   - component: {fileID: 1187537258}
   m_Layer: 0
-  m_Name: ScoreTeller
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -612,6 +612,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1456095895}
   scoreText: {fileID: 609388558}
+  canvas: {fileID: 1176488875}
 --- !u!1001 &1218432012
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5999,7 +6000,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1777698368
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6032,7 +6033,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.254717, g: 0.254717, b: 0.254717, a: 0.4627451}
+  m_Color: {r: 0.254717, g: 0.254717, b: 0.254717, a: 0.92941177}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
