@@ -8,33 +8,35 @@ public class OrbitMouseLook : MonoBehaviour
     public Transform cameraObject;
 
     public float mouseSensitivity;
+
+    public float minFov = 35f;
+    public float maxFov = 100f;
     public float scrollSensitivity;
 
-    private float xrot;
-    private float yrot;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        OrbitingMouseLook();
+        OrbittingMouseLook();
     }
 
-    private void OrbitingMouseLook() 
+    private void OrbittingMouseLook() 
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        if (Input.GetMouseButton(1)) {
+            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        mouseX -= yrot;
-        mouseY -= xrot;
+            //TODO: Clamping the values
 
-        //Need local rotation for this
-        //transform.rotation = Quaternion.Euler(xrot, yrot, 0);
-        cameraRig.localEulerAngles = new Vector3(xrot, yrot, 0);
+            cameraRig.transform.RotateAround(cameraRig.transform.position, cameraRig.transform.up, mouseX);
+            cameraObject.transform.RotateAround(cameraRig.transform.position, cameraRig.transform.forward, -mouseY);
+
+            //TODO: Zoom
+            float fov = Camera.main.fieldOfView;
+            fov += Input.GetAxis("Mouse ScrollWheel") * scrollSensitivity;
+            fov = Mathf.Clamp(fov, minFov, maxFov);
+            Camera.main.fieldOfView = fov;
+        }
+
     }
 }
