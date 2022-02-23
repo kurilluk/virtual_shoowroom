@@ -302,8 +302,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraRig: {fileID: 245308574}
-  cameraObject: {fileID: 0}
-  mouseSensitivity: 10
+  cameraObject: {fileID: 1317105809}
+  mouseSensitivity: 1000
   scrollSensitivity: 1
 --- !u!850595691 &388867319
 LightingSettings:

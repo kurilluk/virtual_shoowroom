@@ -30,9 +30,11 @@ public class OrbitMouseLook : MonoBehaviour
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        mouseX = yrot;
-        mouseY = xrot;
+        mouseX -= yrot;
+        mouseY -= xrot;
 
-        cameraObject.rotation = Quaternion.Euler(xrot, yrot, 0);
+        //Need local rotation for this
+        //transform.rotation = Quaternion.Euler(xrot, yrot, 0);
+        transform.localEulerAngles = new Vector3(xrot, yrot, 0);
     }
 }
