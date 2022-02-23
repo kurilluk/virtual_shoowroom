@@ -12,6 +12,7 @@ public class OrbitMouseLook : MonoBehaviour
     public float minFov = 35f;
     public float maxFov = 100f;
     public float scrollSensitivity;
+    public float zoomAmount;
 
 
     // Update is called once per frame
@@ -32,10 +33,14 @@ public class OrbitMouseLook : MonoBehaviour
             cameraObject.transform.RotateAround(cameraRig.transform.position, cameraRig.transform.forward, -mouseY);
 
             //TODO: Zoom
-            float fov = Camera.main.fieldOfView;
-            fov += Input.GetAxis("Mouse ScrollWheel") * scrollSensitivity;
-            fov = Mathf.Clamp(fov, minFov, maxFov);
-            Camera.main.fieldOfView = fov;
+            //float fov = Camera.main.fieldOfView;
+            //fov += Input.GetAxis("Mouse ScrollWheel") * scrollSensitivity;
+            //fov = Mathf.Clamp(fov, minFov, maxFov);
+            //Camera.main.fieldOfView = fov;
+
+            //zoomAmount += Input.GetAxis("Mouse ScrollWheel") * scrollSensitivity;
+            //zoomAmount = Mathf.Clamp(zoomAmount, -10, 10);
+            //cameraObject.transform.Translate(0, 0, zoomAmount * Time.deltaTime);
         }
 
     }
