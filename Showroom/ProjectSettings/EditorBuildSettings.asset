@@ -4,7 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Showroom/_Showroom.unity
+    guid: 5dfa7dc051277b441876c5a492e5dd24
+  - enabled: 1
+    path: Assets/Montrac.TruckFactory/_Montrac.TruckFactory.unity
+    guid: e5b9007e4c058ac42b0b51945376a5c5
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 0c1b4e9ffe37ead43a0e3ef5c3162861,
       type: 2}

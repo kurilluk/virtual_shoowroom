@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class MyGameObjectScript : MonoBehaviour
+public class SceneLoader : MonoBehaviour
 {
-        public int m_MyInt = 75;
-        public Vector3 m_MyVector = new Vector3(20, 1, 0);
-        public Rail m_MyGameObject;
-   
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (!SceneManager.GetSceneByBuildIndex(1).isLoaded) 
+        {
+            SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
+        }
+
     }
 
     // Update is called once per frame
