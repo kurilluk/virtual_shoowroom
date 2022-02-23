@@ -11,4 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/RoboTeach/RoboTeach-AIM.unity
     guid: 123db02156ea3f044be1dea86bff1c6c
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 81460fc63fa3d114280a232fd7902356,
+      type: 2}

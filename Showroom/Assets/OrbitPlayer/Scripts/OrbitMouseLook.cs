@@ -35,6 +35,6 @@ public class OrbitMouseLook : MonoBehaviour
 
         //Need local rotation for this
         //transform.rotation = Quaternion.Euler(xrot, yrot, 0);
-        transform.localEulerAngles = new Vector3(xrot, yrot, 0);
+        cameraRig.localEulerAngles = new Vector3(xrot, yrot, 0);
     }
 }

@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // This requires the _Showroom scene to have Build index 0 and be in the Build Scenes.
+    // Then the other scene with your content can be loaded on Start().
     void Start()
     {
         if (!SceneManager.GetSceneByBuildIndex(1).isLoaded) 
