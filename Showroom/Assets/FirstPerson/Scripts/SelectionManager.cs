@@ -16,7 +16,8 @@ public class SelectionManager : MonoBehaviour
     private Transform _activeSelection;
 
     // Declare a delegate using Action
-    public static event Action arrowClicked;
+    public static event Action arrowIncrease;
+    public static event Action arrowDecrease;
 
     void Update()
     {
@@ -51,7 +52,10 @@ public class SelectionManager : MonoBehaviour
                     Debug.Log("Move the arm please.");
                     if (Input.GetMouseButtonDown(0))
                     {
-                        arrowClicked?.Invoke();
+                        if (hitInfo.transform.name == "Arrow-Plus")
+                            arrowIncrease?.Invoke();
+                        else if (hitInfo.transform.name == "Arrow-Minus")
+                            arrowDecrease?.Invoke();
                     }
                 }
                 else
