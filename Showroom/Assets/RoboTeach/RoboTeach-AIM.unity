@@ -7827,6 +7827,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: KUKA-MoveJ
       objectReference: {fileID: 0}
+    - target: {fileID: 5368942204820242105, guid: da98a919bab51364abaa7703713e9b86,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5925485397294062980, guid: da98a919bab51364abaa7703713e9b86,
         type: 3}
       propertyPath: m_Layer

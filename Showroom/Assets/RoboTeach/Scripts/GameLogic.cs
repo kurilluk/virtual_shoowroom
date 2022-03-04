@@ -24,7 +24,7 @@ public class GameLogic : MonoBehaviour
     IEnumerator ShowScoreText() 
     {
         canvas.gameObject.SetActive(true);
-        Debug.Log("The score should be displayed now.");
+        //Debug.Log("The score should be displayed now.");
         int numberOfTargets = target.levelPositions.Length;
         int actualTargetIndex = target.acturalTargetIndex + 1;
         if (actualTargetIndex == numberOfTargets){

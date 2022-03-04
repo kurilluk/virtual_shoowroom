@@ -27,7 +27,7 @@ public class Target : MonoBehaviour
 
     public void InitializeMe(Vector3[] positions) 
     {
-        Debug.Log("Initialized the Target.");
+        //Debug.Log("Initialized the Target.");
         levelPositions = positions;
         ResetIndex();
         MoveMe(levelPositions[0]);
@@ -35,13 +35,13 @@ public class Target : MonoBehaviour
 
     private void ResetIndex() 
     {
-        Debug.Log("The Index has been reset.");
+        //Debug.Log("The Index has been reset.");
         acturalTargetIndex = 0;
     }
 
     private void EnableMe() 
     {
-        Debug.Log("Target just got Enabled.");
+        //Debug.Log("Target just got Enabled.");
         targetGO.SetActive(true);
         StartCoroutine(Grow());
     }
@@ -51,7 +51,7 @@ public class Target : MonoBehaviour
         for (float f = 0; f<=1; f+=0.05f ) 
         {
             StopCoroutine(Shrink());
-            Debug.Log("Growing animation frame: "+ f.ToString());
+            //Debug.Log("Growing animation frame: "+ f.ToString());
             targetGO.transform.localScale = new Vector3(1f,1f,1f) * f;
             yield return new WaitForSeconds(0.05f);
         }
@@ -61,7 +61,7 @@ public class Target : MonoBehaviour
         StopCoroutine(Grow());
         for (float f = 1; f >= 0.000001; f -= 0.05f)
         {
-            Debug.Log("Shrinking animation frame: " + f.ToString());
+            //Debug.Log("Shrinking animation frame: " + f.ToString());
             targetGO.transform.localScale = new Vector3(1f, 1f, 1f) * f;
             yield return new WaitForSeconds(0.05f);
         }
@@ -69,7 +69,7 @@ public class Target : MonoBehaviour
 
     private void MoveMe(Vector3 moveHere) 
     {
-        Debug.Log("Target moved to a new position: " + moveHere.ToString());
+        //Debug.Log("Target moved to a new position: " + moveHere.ToString());
         this.transform.position = moveHere;
         // TODO: Add animation 
     }
@@ -84,7 +84,7 @@ public class Target : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("You've hit the target!");
+        //Debug.Log("You've hit the target!");
         TargetHit();
         acturalTargetIndex++;
         if (acturalTargetIndex >= levelPositions.Length)

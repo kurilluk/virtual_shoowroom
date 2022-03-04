@@ -52,7 +52,7 @@ MonoBehaviour:
   defaultMaterial: {fileID: 2100000, guid: 85349e5ca6934964a86f89c0a0b91eb9, type: 2}
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!114 &8469172402636410570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,10 +82,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraRig: {fileID: 8469172402636410571}
   cameraObject: {fileID: 8469172403710272196}
-  mouseSensitivity: 100
+  mouseSensitivity: 300
   minFov: 35
   maxFov: 100
   scrollSensitivity: 100
+  zoomAmount: 0
 --- !u!1 &8469172402802013828
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,7 +393,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8469172403744171954
 RectTransform:
   m_ObjectHideFlags: 0

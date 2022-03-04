@@ -22,7 +22,7 @@ public class SelectionManager : MonoBehaviour
             var selectionRenderer = _activeSelection.GetComponent<Renderer>();
             //selectionRenderer.material.color = defaultColor;
             selectionRenderer.material = defaultMaterial;
-            Debug.Log("The material changed to Default color." + defaultMaterial.ToString());
+            //Debug.Log("The material changed to Default color." + defaultMaterial.ToString());
             _activeSelection = null;
         }
 
@@ -31,12 +31,13 @@ public class SelectionManager : MonoBehaviour
         if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity, layerMask))
         {
             var selection = hitInfo.transform;
+            Debug.Log(hitInfo.transform.name);
 
             var selectionRenderer = selection.GetComponent<Renderer>();
             if (selectionRenderer != null)
             {
                 selectionRenderer.material = highlightedMaterial;
-                Debug.Log("Material changed to Highlighted color." + highlightedMaterial.ToString());
+                //Debug.Log("Material changed to Highlighted color." + highlightedMaterial.ToString());
 
                 if (Input.GetMouseButtonDown(0))
                 {
