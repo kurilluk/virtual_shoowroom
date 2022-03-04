@@ -6,9 +6,9 @@ public class SelectionManager : MonoBehaviour
 {
     [SerializeField] public Material highlightedMaterial;
     [SerializeField] public Material defaultMaterial;
-    //[SerializeField] public Color highlightedColor;
-    //[SerializeField] public Color defaultColor;
-    //[SerializeField] public string selectableTag = "Selectable";
+
+    [SerializeField] public Material arrowHighlightedMaterial;
+    [SerializeField] public Material arrowDefaultMaterial;
 
     [SerializeField] private LayerMask layerMask;
 
@@ -20,9 +20,15 @@ public class SelectionManager : MonoBehaviour
         if (_activeSelection != null) 
         {
             var selectionRenderer = _activeSelection.GetComponent<Renderer>();
-            //selectionRenderer.material.color = defaultColor;
-            selectionRenderer.material = defaultMaterial;
-            //Debug.Log("The material changed to Default color." + defaultMaterial.ToString());
+ 
+            if (_activeSelection.transform.tag == "Arrows")
+            {
+                selectionRenderer.material = arrowDefaultMaterial;
+            }
+            else
+            {
+                selectionRenderer.material = defaultMaterial;
+            }
             _activeSelection = null;
         }
 
@@ -36,23 +42,20 @@ public class SelectionManager : MonoBehaviour
             var selectionRenderer = selection.GetComponent<Renderer>();
             if (selectionRenderer != null)
             {
-                selectionRenderer.material = highlightedMaterial;
-                //Debug.Log("Material changed to Highlighted color." + highlightedMaterial.ToString());
+                if (hitInfo.transform.tag == "Arrows")
+                {
+                    selectionRenderer.material = arrowHighlightedMaterial;
+                    Debug.Log("Move the arm please.");
+                }
+                else
+                {
+                    selectionRenderer.material = highlightedMaterial;
+                }
 
                 if (Input.GetMouseButtonDown(0))
                 {
                     var obj = selection.GetChild(0).gameObject;
                     obj.SetActive(!obj.activeInHierarchy);
-
-                    //Debug.Log("Click to enable the Pop-up window now!");
-                    //if (!selection.GetChild(0).gameObject.activeInHierarchy)
-                    //{
-                    //    selection.GetChild(0).gameObject.SetActive(true);
-                    //}
-                    //else
-                    //{
-                    //    selection.GetChild(0).gameObject.SetActive(false);
-                    //}
                 }
             }
             _activeSelection = selection;

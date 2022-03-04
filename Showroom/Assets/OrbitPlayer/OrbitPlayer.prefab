@@ -48,8 +48,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a807c8627e2081948aaa0df6c2db7ec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightedMaterial: {fileID: 2100000, guid: e39e880fa08788f4297cd7d7e04595d2, type: 2}
+  highlightedMaterial: {fileID: 2100000, guid: 240ba3ebeeedf40499278c72a0526ba9, type: 2}
   defaultMaterial: {fileID: 2100000, guid: 85349e5ca6934964a86f89c0a0b91eb9, type: 2}
+  arrowHighlightedMaterial: {fileID: 2100000, guid: b6a02296b5d6f7a4baaf12dae1c45d7b,
+    type: 2}
+  arrowDefaultMaterial: {fileID: 2100000, guid: aa73226b69d5c9f4b8f333cf487db664,
+    type: 2}
   layerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -273,7 +277,7 @@ GameObject:
   - component: {fileID: 8469172403710272199}
   m_Layer: 0
   m_Name: Main Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
