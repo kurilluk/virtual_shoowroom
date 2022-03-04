@@ -14,11 +14,27 @@ public class SelectionManager : MonoBehaviour
     [SerializeField] private LayerMask layerMask;
 
     [SerializeField] private float arrowRotationSpeed = 5f;
-
+    public GameObject robot;
     private Transform _activeSelection;
 
     // Declare a delegate using Action
     public static event Action<int, float> arrowRotate;
+
+    //private void Start()
+    //{
+    //    //TODO: Define default materials for all the child objects of KUKA-MoveJ (Cross scene refference!!! - MegaDIRTY !!!)
+    //    List<Transform> allChildren = new List<Transform>();
+    //    foreach (Transform child in robot.transform)
+    //    {
+    //        var defaultRenderer = child.gameObject.GetComponent<Renderer>();
+    //        if (defaultRenderer != null)
+    //        {
+    //            defaultMaterial = defaultRenderer.material;
+    //            Debug.Log(defaultMaterial.name);
+    //        }
+
+    //    }
+    //}
 
     void Update()
     {
@@ -42,7 +58,7 @@ public class SelectionManager : MonoBehaviour
         if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity, layerMask))
         {
             var selection = hitInfo.transform;
-            Debug.Log(hitInfo.transform.name);
+            //Debug.Log(hitInfo.transform.name);
 
             var selectionRenderer = selection.GetComponent<Renderer>();
             if (selectionRenderer != null)
@@ -50,7 +66,6 @@ public class SelectionManager : MonoBehaviour
                 if (hitInfo.transform.tag == "Arrows")
                 {
                     selectionRenderer.material = arrowHighlightedMaterial;
-                    Debug.Log("Move the arm please.");
                     if (Input.GetMouseButtonDown(0))
                     {
                         if (hitInfo.transform.name == "Arrow-Plus")
@@ -82,9 +97,7 @@ public class SelectionManager : MonoBehaviour
                                 default:
                                     break;
                             }
-                            //arrowRotate?.Invoke(0, 5f);
                         }
-
                         else if (hitInfo.transform.name == "Arrow-Minus")
                         {
                             switch (hitInfo.transform.parent.parent.name)
@@ -133,15 +146,12 @@ public class SelectionManager : MonoBehaviour
                             var obj = selection.GetChild(0).gameObject;
                             obj.SetActive(!obj.activeInHierarchy);
                         }
-                        
                     }
                 }
 
 
             }
             _activeSelection = selection;
- 
-
         }
     }
 }
