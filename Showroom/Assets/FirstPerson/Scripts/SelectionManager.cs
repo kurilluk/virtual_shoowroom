@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class SelectionManager : MonoBehaviour
 {
@@ -14,7 +15,9 @@ public class SelectionManager : MonoBehaviour
 
     private Transform _activeSelection;
 
-    // Update is called once per frame
+    // Declare a delegate using Action
+    public static event Action arrowClicked;
+
     void Update()
     {
         if (_activeSelection != null) 
@@ -46,17 +49,24 @@ public class SelectionManager : MonoBehaviour
                 {
                     selectionRenderer.material = arrowHighlightedMaterial;
                     Debug.Log("Move the arm please.");
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        arrowClicked?.Invoke();
+                    }
                 }
                 else
                 {
                     selectionRenderer.material = highlightedMaterial;
+
+                    //Show the first child of the selected object
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        var obj = selection.GetChild(0).gameObject;
+                        obj.SetActive(!obj.activeInHierarchy);
+                    }
                 }
 
-                if (Input.GetMouseButtonDown(0))
-                {
-                    var obj = selection.GetChild(0).gameObject;
-                    obj.SetActive(!obj.activeInHierarchy);
-                }
+
             }
             _activeSelection = selection;
  

@@ -38,6 +38,14 @@ public class SliderMoveJ : MonoBehaviour
         slider3.onValueChanged.AddListener(delegate { CheckSlider3(); });
         slider4.onValueChanged.AddListener(delegate { CheckSlider4(); });
         slider5.onValueChanged.AddListener(delegate { CheckSlider5(); });
+
+        //Check if the Arrows aren being clicked
+        SelectionManager.arrowClicked += RotateByArrows;
+    }
+
+    private void RotateByArrows()
+    {
+        Debug.Log("Robots knows you've cliced the arrow!");
     }
 
     // Invoked when the value of the slider changes.
