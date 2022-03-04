@@ -114,7 +114,6 @@ public class SelectionManager : MonoBehaviour
                                     break;
                             }
                         }
-
                     }
                 }
                 else
@@ -124,8 +123,17 @@ public class SelectionManager : MonoBehaviour
                     //Show the first child of the selected object
                     if (Input.GetMouseButtonDown(0))
                     {
-                        var obj = selection.GetChild(0).gameObject;
-                        obj.SetActive(!obj.activeInHierarchy);
+                        if (hitInfo.transform.name == "Tool")
+                        {
+                            var obj = selection.parent.GetChild(0).gameObject;
+                            obj.SetActive(!obj.activeInHierarchy);
+                        }
+                        else
+                        {
+                            var obj = selection.GetChild(0).gameObject;
+                            obj.SetActive(!obj.activeInHierarchy);
+                        }
+                        
                     }
                 }
 
