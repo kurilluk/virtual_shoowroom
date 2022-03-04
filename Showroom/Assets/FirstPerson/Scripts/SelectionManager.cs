@@ -13,11 +13,12 @@ public class SelectionManager : MonoBehaviour
 
     [SerializeField] private LayerMask layerMask;
 
+    [SerializeField] private float arrowRotationSpeed = 5f;
+
     private Transform _activeSelection;
 
     // Declare a delegate using Action
-    public static event Action arrowIncrease;
-    public static event Action arrowDecrease;
+    public static event Action<int, float> arrowRotate;
 
     void Update()
     {
@@ -53,9 +54,67 @@ public class SelectionManager : MonoBehaviour
                     if (Input.GetMouseButtonDown(0))
                     {
                         if (hitInfo.transform.name == "Arrow-Plus")
-                            arrowIncrease?.Invoke();
+                        {
+                            //arrowIncrease?.Invoke();
+                            switch (hitInfo.transform.parent.parent.name)
+                            {
+                                case "Arm0":
+                                    arrowRotate?.Invoke(0, arrowRotationSpeed);
+                                    break;
+                                case "Arm1":
+                                    arrowRotate?.Invoke(1, arrowRotationSpeed);
+                                    break;
+                                case "Arm2":
+                                    arrowRotate?.Invoke(2, arrowRotationSpeed);
+                                    break;
+                                case "Arm3":
+                                    arrowRotate?.Invoke(3, arrowRotationSpeed);
+                                    break;
+                                case "Arm4":
+                                    arrowRotate?.Invoke(4, arrowRotationSpeed);
+                                    break;
+                                case "Arm5":
+                                    arrowRotate?.Invoke(5, arrowRotationSpeed);
+                                    break;
+                                case "Tool":
+                                    arrowRotate?.Invoke(5, arrowRotationSpeed);
+                                    break;
+                                default:
+                                    break;
+                            }
+                            //arrowRotate?.Invoke(0, 5f);
+                        }
+
                         else if (hitInfo.transform.name == "Arrow-Minus")
-                            arrowDecrease?.Invoke();
+                        {
+                            switch (hitInfo.transform.parent.parent.name)
+                            {
+                                case "Arm0":
+                                    arrowRotate?.Invoke(0, -arrowRotationSpeed);
+                                    break;
+                                case "Arm1":
+                                    arrowRotate?.Invoke(1, -arrowRotationSpeed);
+                                    break;
+                                case "Arm2":
+                                    arrowRotate?.Invoke(2, -arrowRotationSpeed);
+                                    break;
+                                case "Arm3":
+                                    arrowRotate?.Invoke(3, -arrowRotationSpeed);
+                                    break;
+                                case "Arm4":
+                                    arrowRotate?.Invoke(4, -arrowRotationSpeed);
+                                    break;
+                                case "Arm5":
+                                    arrowRotate?.Invoke(5, -arrowRotationSpeed);
+                                    break;
+                                case "Tool":
+                                    arrowRotate?.Invoke(5, -arrowRotationSpeed);
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+
                     }
                 }
                 else
