@@ -133,10 +133,13 @@ public class SelectionManager : MonoBehaviour
                 {
                     selectionRenderer.material = highlightedMaterial;
 
+                    var obj = selection.GetChild(0).gameObject;
+
                     //Show the first child of the selected object
                     if (Input.GetMouseButtonDown(0))
                     {
-                        var obj = selection.parent.GetChild(0).gameObject;
+                        //var obj = selection.GetChild(0).gameObject;
+
                         
                         if (hitInfo.transform.name == "Tool")
                         {
@@ -146,6 +149,7 @@ public class SelectionManager : MonoBehaviour
                         {
                             obj = selection.GetChild(0).gameObject;
                         }
+
                         obj.SetActive(!obj.activeInHierarchy);
 
                     }
