@@ -655,6 +655,46 @@ PrefabInstance:
       propertyPath: m_Reticle
       value: 
       objectReference: {fileID: 129210909}
+    - target: {fileID: 3403640849107060804, guid: deabcadd45094204fb483c58d2296fcf,
+        type: 3}
+      propertyPath: m_InvalidColorGradient.key0.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3403640849107060804, guid: deabcadd45094204fb483c58d2296fcf,
+        type: 3}
+      propertyPath: m_InvalidColorGradient.key0.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3403640849107060804, guid: deabcadd45094204fb483c58d2296fcf,
+        type: 3}
+      propertyPath: m_InvalidColorGradient.key0.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3403640849107060804, guid: deabcadd45094204fb483c58d2296fcf,
+        type: 3}
+      propertyPath: m_InvalidColorGradient.key0.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3403640849107060804, guid: deabcadd45094204fb483c58d2296fcf,
+        type: 3}
+      propertyPath: m_InvalidColorGradient.key1.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3403640849107060804, guid: deabcadd45094204fb483c58d2296fcf,
+        type: 3}
+      propertyPath: m_InvalidColorGradient.key1.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3403640849107060804, guid: deabcadd45094204fb483c58d2296fcf,
+        type: 3}
+      propertyPath: m_InvalidColorGradient.key1.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3403640849107060804, guid: deabcadd45094204fb483c58d2296fcf,
+        type: 3}
+      propertyPath: m_InvalidColorGradient.key1.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3403640849635053389, guid: deabcadd45094204fb483c58d2296fcf,
         type: 3}
       propertyPath: m_RootOrder
@@ -715,8 +755,86 @@ PrefabInstance:
       propertyPath: m_Name
       value: VR Rig
       objectReference: {fileID: 0}
+    - target: {fileID: 3403640849878285554, guid: deabcadd45094204fb483c58d2296fcf,
+        type: 3}
+      propertyPath: m_ControllerNode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3403640849878285565, guid: deabcadd45094204fb483c58d2296fcf,
+        type: 3}
+      propertyPath: m_ValidColorGradient.key0.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3403640849878285565, guid: deabcadd45094204fb483c58d2296fcf,
+        type: 3}
+      propertyPath: m_ValidColorGradient.key0.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3403640849878285565, guid: deabcadd45094204fb483c58d2296fcf,
+        type: 3}
+      propertyPath: m_ValidColorGradient.key0.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3403640849878285565, guid: deabcadd45094204fb483c58d2296fcf,
+        type: 3}
+      propertyPath: m_ValidColorGradient.key1.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3403640849878285565, guid: deabcadd45094204fb483c58d2296fcf,
+        type: 3}
+      propertyPath: m_ValidColorGradient.key1.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3403640849878285565, guid: deabcadd45094204fb483c58d2296fcf,
+        type: 3}
+      propertyPath: m_ValidColorGradient.key1.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3403640849878285567, guid: deabcadd45094204fb483c58d2296fcf,
+        type: 3}
+      propertyPath: m_Name
+      value: Right Ray Interactor
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deabcadd45094204fb483c58d2296fcf, type: 3}
+--- !u!1 &701170978 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3403640849130461376, guid: deabcadd45094204fb483c58d2296fcf,
+    type: 3}
+  m_PrefabInstance: {fileID: 663799756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &701170983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701170978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &862249633 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: eb45402d5dc81d749a3b821ea559a5d7,
@@ -1517,13 +1635,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1456141293}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.43, y: 1.3629541, z: 1.305}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 1.11, y: 1.3629541, z: -3.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1198163261}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &1525464009
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1948,6 +2066,26 @@ PrefabInstance:
     - target: {fileID: 847680266459976380, guid: b0c394d6e1c39c948923d546ca86e09a,
         type: 3}
       propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 904125317234611400, guid: b0c394d6e1c39c948923d546ca86e09a,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 904125317234611400, guid: b0c394d6e1c39c948923d546ca86e09a,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 904125317234611400, guid: b0c394d6e1c39c948923d546ca86e09a,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 904125317234611400, guid: b0c394d6e1c39c948923d546ca86e09a,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 921334835627574799, guid: b0c394d6e1c39c948923d546ca86e09a,

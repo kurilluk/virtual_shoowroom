@@ -7,6 +7,7 @@ public class AnimationHandler : MonoBehaviour
 {
     private PlayableDirector director;
 
+
     private void Awake()
     {
         director = GetComponent<PlayableDirector>();
