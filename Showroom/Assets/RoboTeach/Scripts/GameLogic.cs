@@ -10,6 +10,7 @@ public class GameLogic : MonoBehaviour
     public Target target;
     [SerializeField] public TextMeshProUGUI scoreText;
     [SerializeField] private Canvas canvas;
+    public GameObject screenFader;
 
 
     private void OmEnable()
@@ -48,6 +49,7 @@ public class GameLogic : MonoBehaviour
     {
         scoreText.text = "";
         canvas.gameObject.SetActive(false);
+        screenFader.SetActive(true);
     }
 
     private void ResetGame() 
@@ -57,10 +59,11 @@ public class GameLogic : MonoBehaviour
 
     IEnumerator ReloadLevel() 
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(10f);
         canvas.gameObject.SetActive(true);
         scoreText.text = "Reloading the game!";
         yield return new WaitForSeconds(2f);
+        screenFader.SetActive(true);
         scoreText.text = "";
         canvas.gameObject.SetActive(false);
         SceneManager.UnloadSceneAsync(1, UnloadSceneOptions.None);
