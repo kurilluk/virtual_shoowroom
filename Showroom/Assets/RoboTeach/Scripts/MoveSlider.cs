@@ -20,6 +20,7 @@ public class MoveSlider : MonoBehaviour
     {
         //string name = sliderText.text;
         //sliderText = FindObjectOfType<TextMeshProUGUI>();
+        sliderText.text = Mathf.Round(initialValue).ToString();
         slider.onValueChanged.AddListener(delegate { DisplaySliderText(); });
 
         //resetButton.onClick.AddListener(delegate { ResetSliders(); });
